@@ -1,0 +1,24 @@
+/*-----------------------------------*\
+  #font.css
+\*-----------------------------------*/
+
+/* 
+ * Copyright 2024 You
+ */
+
+@font-face {
+  /* Nombre de la fuente */
+  font-family: 'ClashDisplay';
+
+  /* Estilo de la fuente: normal, italic, oblique */
+  font-style: normal;
+
+  /* Peso de la fuente: el valor puede variar de 100 a 900 */
+  font-weight: 600;
+
+  /* Ruta de la fuente y formato */
+  src: url('../fonts/ClashDisplay-Semibold.woff2') format('woff2');
+
+  /* Controla cómo se carga una fuente: auto, block, swap, fallback, optional */
+  font-display: swap;
+}
