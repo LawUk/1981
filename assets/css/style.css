@@ -1,5 +1,5 @@
 /*-----------------------------------*\
-  #style.css (Temática Medieval/Mar Corregida)
+  #style.css 
 \*-----------------------------------*/
 
 /*-----------------------------------*\
@@ -13,34 +13,33 @@
    */
 
   /* Colores de Fondo */
-  --bg-white: hsla(0, 0%, 100%, 1); /* Se mantiene blanco para texto o detalles */
-  --bg-light-sand: hsla(38, 40%, 95%, 1); /* Beige muy claro, arena/pergamino */
-  --bg-stone-gray: hsla(210, 5%, 80%, 1); /* Gris de piedra claro para fondos secundarios */
-  --bg-deep-sea: hsla(210, 80%, 25%, 1); /* Azul profundo, como el mar */
-  --bg-sky-blue: hsla(200, 70%, 50%, 1); /* Azul más claro, cielo/agua superficial */
-  --bg-accent-gold: hsla(40, 90%, 55%, 1); /* Dorado para acentos (botones, focos) */
+  --bg-white: hsla(0, 0%, 100%, 1);
+  --bg-light-sand: hsla(38, 40%, 95%, 1);
+  --bg-stone-gray: hsla(210, 5%, 80%, 1);
+  --bg-deep-sea: hsla(210, 80%, 25%, 1);
+  --bg-sky-blue: hsla(200, 70%, 50%, 1);
+  --bg-accent-gold: hsla(40, 90%, 55%, 1);
   --bg-roman-silver-alpha-30: hsla(210, 9%, 57%, 0.3);
 
   /* Colores de Texto */
-  --text-deep-sea: hsla(210, 80%, 20%, 1); /* Azul oscuro para texto principal */
-  --text-sky-blue: hsla(200, 70%, 50%, 1); /* Azul claro para texto secundario */
-  --text-dark-stone: hsla(210, 11%, 15%, 1); /* Gris muy oscuro, casi negro, para contraste */
-  --text-black: hsla(270, 100%, 0%, 1); /* Negro puro */
+  --text-deep-sea: hsla(210, 80%, 20%, 1);
+  --text-sky-blue: hsla(200, 70%, 50%, 1);
+  --text-dark-stone: hsla(210, 11%, 15%, 1);
+  --text-black: hsla(270, 100%, 0%, 1);
 
   /* Colores de Borde */
-  --border-dark-stone: hsla(210, 11%, 15%, 1); /* Borde oscuro para elementos fuertes */
-  --border-deep-sea: hsla(210, 80%, 25%, 1); /* Borde azul para elementos clave */
+  --border-dark-stone: hsla(210, 11%, 15%, 1);
+  --border-deep-sea: hsla(210, 80%, 25%, 1);
 
 
   /**
    * TYPOGRAPHY
    */
 
-  /* font family */
   --fontFamily-inter: 'Inter', sans-serif;
   --fontFamily-clashDisplay: 'ClashDisplay', cursive;
 
-  /* font size */
+  /* ... (el resto de tus variables se mantiene igual) ... */
   --fontSize-1: 6.2rem;
   --fontSize-2: 4.4rem;
   --fontSize-3: 3.8rem;
@@ -52,8 +51,6 @@
   --fontSize-9: 1.4rem;
   --fontSize-10: 2.4rem;
   --fontSize-11: 1.2rem;
-
-  /* font weight */
   --weight-semiBold: 600;
 
   /**
@@ -69,7 +66,7 @@
    */
 
   --radius-circle: 50%;
-  --radius-block: 8px; /* Un radio sutil para bloques */
+  --radius-block: 8px;
 
   /**
    * TRANSITION
@@ -145,8 +142,8 @@ html {
 }
 
 body {
-  background-color: var(--bg-light-sand); /* Fondo general de la página, un beige claro */
-  color: var(--text-dark-stone); /* Color de texto principal */
+  background-color: var(--bg-light-sand);
+  color: var(--text-dark-stone);
   font-size: 1.6rem;
   line-height: 1.5;
 }
@@ -188,8 +185,8 @@ body {
 }
 
 .btn {
-  background-color: var(--bg-sky-blue); /* Botón con azul claro */
-  border: 2px solid var(--border-deep-sea); /* Borde azul oscuro */
+  background-color: var(--bg-sky-blue);
+  border: 2px solid var(--border-deep-sea);
   box-shadow: var(--shadow-2);
   border-radius: var(--radius-block);
   display: flex;
@@ -199,13 +196,13 @@ body {
   padding: 15px 30px;
   font-weight: var(--weight-semiBold);
   transition: var(--transition-1);
-  color: var(--text-deep-sea); /* <-- ARREGLO DE CONTRASTE AÑADIDO */
+  color: var(--text-deep-sea); /* Texto oscuro para contraste en botón azul claro */
 }
 
 .btn:is(:hover, :focus-visible) {
   box-shadow: none;
-  background-color: var(--bg-accent-gold); /* Dorado al pasar el ratón */
-  color: var(--text-deep-sea); /* Texto azul oscuro sobre dorado */
+  background-color: var(--bg-accent-gold);
+  color: var(--text-deep-sea);
   border-color: var(--text-deep-sea);
 }
 
@@ -225,8 +222,8 @@ body {
 }
 
 .btn-secondary {
-  background-color: var(--bg-deep-sea); /* Botón secundario con azul profundo */
-  color: var(--bg-light-sand); /* Texto claro */
+  background-color: var(--bg-deep-sea);
+  color: var(--bg-light-sand);
 }
 .btn-secondary:is(:hover, :focus-visible) {
   background-color: var(--bg-accent-gold);
@@ -236,7 +233,7 @@ body {
 
 .img-holder {
   aspect-ratio: var(--width) / var(--height);
-  background-color: var(--bg-stone-gray); /* Fondo de imágenes en gris piedra */
+  background-color: var(--bg-stone-gray);
   overflow: hidden;
 }
 
@@ -267,12 +264,11 @@ body {
   gap: 8px;
   opacity: 0;
   
-  /* --- Estilos de botón aplicados --- */
   background-color: var(--bg-deep-sea);
   color: var(--bg-light-sand);
   border: 2px solid var(--border-dark-stone);
   border-radius: var(--radius-block);
-  padding: 15px 30px; /* Aseguramos que tenga padding */
+  padding: 15px 30px;
   font-weight: var(--weight-semiBold);
   transition: var(--transition-1);
 }
@@ -304,7 +300,7 @@ body {
 }
 
 .product-card .price {
-  color: var(--text-deep-sea); /* Precio en azul oscuro */
+  color: var(--text-deep-sea);
   font-family: var(--fontFamily-clashDisplay);
   font-size: var(--fontSize-7);
   font-weight: var(--weight-semiBold);
@@ -350,11 +346,15 @@ body {
   width: 100%;
   padding-block: 25px;
   z-index: 4;
+  /* --- MEJORA v2: Texto claro por defecto (sobre el hero oscuro) --- */
+  color: var(--bg-light-sand);
 }
 
 .header.active {
-  background-color: var(--bg-light-sand); /* Header activo en beige claro */
+  background-color: var(--bg-light-sand);
   box-shadow: var(--shadow-1);
+  /* --- MEJORA v2: Texto oscuro en scroll (sobre fondo claro) --- */
+  color: var(--text-dark-stone);
 }
 
 .header .container {
@@ -372,7 +372,7 @@ body {
   top: 85px;
   left: 0;
   right: 0;
-  background-color: var(--bg-light-sand); /* Menú móvil en beige claro */
+  background-color: var(--bg-light-sand);
   overflow: hidden;
   visibility: hidden;
   opacity: 0;
@@ -398,10 +398,10 @@ body {
 
 .navbar-link {
   padding: 10px 20px;
-  color: var(--text-deep-sea); /* Enlaces de navegación en azul oscuro */
+  /* --- MEJORA v2: Color quitado para heredar del .header --- */
 }
 .navbar-link:is(:hover, :focus-visible) {
-  background-color: var(--bg-stone-gray); /* Fondo gris de piedra al pasar el ratón */
+  background-color: var(--bg-stone-gray);
 }
 
 .cart-btn {
@@ -409,7 +409,7 @@ body {
   align-items: center;
   gap: 4px;
   padding: 25px 20px;
-  color: var(--text-deep-sea); /* Color del texto del carrito */
+  /* --- MEJORA v2: Color quitado para heredar del .header --- */
 }
 
 
@@ -418,8 +418,8 @@ body {
 \*-----------------------------------*/
 
 .hero {
-  background-color: var(--bg-deep-sea); /* Fondo del hero en azul profundo */
-  color: var(--bg-light-sand); /* Texto del hero en beige claro */
+  background-color: var(--bg-deep-sea);
+  color: var(--bg-light-sand);
   padding-block: 130px 75px;
 }
 
@@ -430,7 +430,7 @@ body {
 
 .hero-subtitle {
   font-size: var(--fontSize-4);
-  color: var(--bg-light-sand); /* <-- ARREGLO DE CONTRASTE AÑADIDO */
+  color: var(--bg-light-sand); /* Arreglo de contraste */
 }
 
 .hero-title {
@@ -441,7 +441,7 @@ body {
   font-size: var(--fontSize-8);
   line-height: 2.1;
   margin-block-end: 16px;
-  color: var(--bg-light-sand); /* Aseguramos texto claro */
+  color: var(--bg-light-sand);
 }
 
 .hero-banner {
@@ -478,7 +478,7 @@ body {
 }
 
 .offer-card {
-  background-color: var(--bg-white); /* Tarjetas de oferta blancas */
+  background-color: var(--bg-white);
   border: 2px solid var(--border-dark-stone);
   box-shadow: var(--shadow-2);
   padding: 80px 30px;
@@ -487,14 +487,14 @@ body {
 
 .offer-card .card-title {
   font-size: var(--fontSize-1);
-  color: var(--text-deep-sea); /* Título de oferta en azul profundo */
+  color: var(--text-deep-sea);
 }
 
 .offer-card .card-text {
   font-size: var(--fontSize-8);
   line-height: 1.8;
   margin-block: 20px 45px;
-  color: var(--text-dark-stone); /* Texto de oferta en gris oscuro */
+  color: var(--text-dark-stone);
 }
 
 
@@ -504,9 +504,9 @@ body {
 
 .footer {
   position: relative;
-  background-color: var(--bg-stone-gray); /* Fondo del footer en gris piedra */
+  background-color: var(--bg-stone-gray);
   padding-block-start: 160px;
-  color: var(--text-dark-stone); /* Texto del footer en gris oscuro */
+  color: var(--text-dark-stone);
 }
 
 .footer-top {
@@ -528,21 +528,21 @@ body {
 }
 
 .social-link {
-  background-color: var(--bg-sky-blue); /* Iconos sociales en azul claro */
+  background-color: var(--bg-sky-blue);
   width: 52px;
   height: 52px;
   display: grid;
   place-items: center;
   border-radius: var(--radius-circle);
-  border: 2px solid var(--border-deep-sea); /* Borde azul oscuro */
+  border: 2px solid var(--border-deep-sea);
   box-shadow: var(--shadow-3);
   transition: var(--transition-1);
-  color: var(--bg-light-sand); /* Iconos claros */
+  color: var(--bg-light-sand);
 }
 
 .social-link:is(:hover, :focus-visible) {
   box-shadow: none;
-  color: var(--bg-accent-gold); /* Dorado al pasar el ratón */
+  color: var(--bg-accent-gold);
   transform: translateY(-2px);
   border-color: var(--text-deep-sea);
 }
@@ -566,12 +566,12 @@ address.footer-text {
   outline: 2px solid transparent;
   outline-offset: 2px;
   border-radius: var(--radius-block);
-  color: var(--text-dark-stone); /* Texto de input oscuro */
+  color: var(--text-dark-stone);
 }
 
 .input-field:focus-visible {
   box-shadow: none;
-  outline-color: var(--bg-accent-gold); /* Foco dorado */
+  outline-color: var(--bg-accent-gold);
 }
 .input-field:focus {
   box-shadow: none;
@@ -600,11 +600,11 @@ address.footer-text {
   font-weight: var(--weight-semiBold);
   text-transform: uppercase;
   transition: var(--transition-1);
-  color: var(--text-deep-sea); /* Enlaces de footer en azul profundo */
+  color: var(--text-deep-sea);
 }
 
 .footer-bottom-link:is(:hover, :focus-visible) {
-  color: var(--bg-accent-gold); /* Dorado al pasar el ratón */
+  color: var(--bg-accent-gold);
 }
 
 .copyright {
@@ -724,6 +724,11 @@ address.footer-text {
     border-block-end: 2px solid var(--border-dark-stone);
   }
 
+  /* --- MEJORA v2: Cuando el header está activo (scroll), el borde debe ser oscuro --- */
+  .header.active .container {
+    border-color: transparent;
+  }
+
   .nav-open-btn {
     display: none;
   }
@@ -751,10 +756,10 @@ address.footer-text {
     padding-inline-start: 50px;
     margin-inline-start: 20px;
   }
-
-  .header.active .container,
+  
+  /* --- MEJORA v2: Cuando el header está activo (scroll), el borde debe ser oscuro --- */
   .header.active .cart-btn {
-    border: none;
+    border-color: var(--border-dark-stone);
   }
 
   .footer .shape-2 {
