@@ -25,26 +25,28 @@ Ionicon
 
 ``` css
 --bg-white: hsla(0, 0%, 100%, 1);
---bg-gainsboro: hsla(154, 10%, 86%, 1);
---bg-wild-blue-yonder: hsla(227, 39%, 75%, 1);
---bg-orange-crayola: hsla(18, 97%, 62%, 1);
+--bg-light-sand: hsla(38, 40%, 95%, 1);
+--bg-stone-gray: hsla(210, 5%, 80%, 1);
+--bg-deep-sea: hsla(210, 25%, 35%, 1);
+--bg-sky-blue: hsla(190, 20%, 55%, 1);
+--bg-accent-gold: hsla(35, 30%, 70%, 1);
 --bg-roman-silver-alpha-30: hsla(210, 9%, 57%, 0.3);
 ```
 
 ### Text color
 
 ``` css
---text-orange-crayola: hsla(18, 97%, 62%, 1);
---text-blue-crayola: hsla(216, 98%, 52%, 1);
---text-eerie-black: hsla(210, 11%, 15%, 1);
---text-eerie-black-2: hsla(0, 0%, 7%, 1);
+--text-deep-sea: hsla(210, 30%, 20%, 1);
+--text-sky-blue: hsla(190, 20%, 55%, 1);
+--text-dark-stone: hsla(210, 11%, 15%, 1);
 --text-black: hsla(270, 100%, 0%, 1);
 ```
 
 ### Border color
 
 ``` css
---border-eerie-black: hsla(0, 0%, 7%, 1);
+--border-dark-stone: hsla(210, 11%, 15%, 1);
+--border-deep-sea: hsla(210, 25%, 35%, 1);
 ```
 
 ## Typography
@@ -63,6 +65,7 @@ Ionicon
 --fontSize-8: 1.8rem;
 --fontSize-9: 1.4rem;
 --fontSize-10: 2.4rem;
+--fontSize-11: 1.2rem;
 
 --weight-semiBold: 600;
 ```
@@ -70,9 +73,9 @@ Ionicon
 ## Shadow
 
 ``` css
---shadow-1: 0 4px 6px hsla(256, 100%, 9%, 0.1);
---shadow-2: 4px 4px 0px hsla(0, 0%, 7%, 1);
---shadow-3: 2px 2px 0px hsla(0, 0%, 7%, 1);
+--shadow-1: 0 4px 6px hsla(210, 11%, 15%, 0.1);
+--shadow-2: 4px 4px 0px var(--border-dark-stone);
+--shadow-3: 2px 2px 0px var(--border-dark-stone);
 ```
 
 ## Transition
