@@ -340,7 +340,9 @@ body {
 \*-----------------------------------*/
 
 .navbar .btn {
-  display: none;
+  margin: 15px 20px;
+  padding: 10px 25px;
+  justify-content: center; /* Centra el texto del botón */
 }
 
 .header {
