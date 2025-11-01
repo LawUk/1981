@@ -292,6 +292,7 @@ body {
 /* --- MEJORA v9: Forzar ratio cuadrado en tarjetas de producto --- */
 .product-card .product-banner.img-holder {
   aspect-ratio: 1 / 1;
+  border-radius: 12px; 
 }
 
 .product-card .card-content {
