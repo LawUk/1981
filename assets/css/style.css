@@ -867,13 +867,12 @@ address.footer-text {
 
   /* MODIFICADO: Se añade padding vertical a los links */
   .navbar-link {
-    padding-block: 25px;
+    padding-block: 30px;
   }
 
   .navbar .btn {
     display: block;
-    /* MODIFICADO: Se ajusta padding vertical y margen izquierdo */
-    padding: 25px;
+    padding: 10px 25px;
     text-transform: uppercase;
     margin-inline-start: 40px;
   }
