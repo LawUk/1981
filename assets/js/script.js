@@ -33,17 +33,13 @@ if (header) {
 }
 
 /**
- * NUEVO: Lookbook Dinámico
- * Esto se ejecutará solo si encuentra la rejilla del lookbook en la página.
+ * NUEVO: Lookbook Dinámico (MODIFICADO CON BOTÓN DE GUARDAR)
  */
 
-// 1. Busca la rejilla del lookbook
 const lookbookGrid = document.querySelector(".lookbook-grid");
 
-// 2. Si la encuentra en esta página...
 if (lookbookGrid) {
   
-  // 3. Busca el archivo JSON que creamos
   fetch('imagenes.json')
     .then(response => {
       if (!response.ok) {
@@ -52,26 +48,55 @@ if (lookbookGrid) {
       return response.json();
     })
     .then(imagenes => {
-      // 4. Para cada nombre de imagen en el JSON...
+      // Para cada nombre de imagen en el JSON...
       imagenes.forEach(nombreImagen => {
         
-        // 5. Crea los elementos HTML
-        const li = document.createElement('li');
-        const img = document.createElement('img');
+        // --- INICIO DE MODIFICACIÓN ---
         
-        // 6. Configura la imagen
-        // (Asegúrate que tu carpeta de imágenes sea correcta)
-        img.src = `./assets/images/lookbook/${nombreImagen}`;
+        // 1. Crea todos los elementos HTML necesarios
+        const li = document.createElement('li');
+        const container = document.createElement('div');
+        const img = document.createElement('img');
+        const downloadLink = document.createElement('a');
+        const downloadIcon = document.createElement('ion-icon');
+        const downloadSpan = document.createElement('span');
+
+        const imagePath = `./assets/images/lookbook/${nombreImagen}`;
+        
+        // 2. Configura la imagen
+        img.src = imagePath;
         img.alt = "Imagen del Lookbook";
         img.loading = "lazy";
         
-        // 7. Los añade a la página
-        li.appendChild(img);
+        // 3. Configura el contenedor (el que faltaba)
+        container.className = 'lookbook-item-container';
+        
+        // 4. Configura el botón de descarga
+        downloadLink.href = imagePath;
+        downloadLink.className = 'btn download-btn';
+        downloadLink.setAttribute('download', ''); // Atributo download
+        
+        downloadIcon.setAttribute('name', 'download-outline');
+        downloadIcon.setAttribute('aria-hidden', 'true');
+        
+        downloadSpan.textContent = 'Guardar';
+        
+        // 5. Ensambla el botón
+        downloadLink.appendChild(downloadIcon);
+        downloadLink.appendChild(downloadSpan);
+        
+        // 6. Ensambla el contenedor
+        container.appendChild(img);
+        container.appendChild(downloadLink);
+        
+        // 7. Añade todo a la página
+        li.appendChild(container);
         lookbookGrid.appendChild(li);
+        
+        // --- FIN DE MODIFICACIÓN ---
       });
     })
     .catch(error => {
-      // 8. Si algo sale mal, muestra un error
       console.error('Error al cargar el lookbook:', error);
       lookbookGrid.innerHTML = "<li><p>Error al cargar las imágenes.</p></li>";
     });
