@@ -692,6 +692,11 @@ address.footer-text {
     color: var(--bg-accent-gold); /* Mantiene el color hover dorado */
   }
 
+  #lookbook-title {
+    font-size: 3.2rem; /* Un poco más pequeño que el 3.8rem original */
+    line-height: 1.1;  /* Ayuda a que no se vea tan alto */
+  }
+
 }
 
 /**
