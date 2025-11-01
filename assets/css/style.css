@@ -885,7 +885,7 @@ address.footer-text {
   .hero .shape-1 {
   top: -45px;   
   left: -45px;  
-  z-index: 2;
+  z-index: 0;
   }
 
   .hero .shape-2 {
