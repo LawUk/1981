@@ -787,7 +787,7 @@ address.footer-text {
   }
 
   .header .container {
-    border-block-end: 2px solid var(--border-dark-stone);
+    /* La línea del borde negro fue eliminada de aquí */
   }
 
   /* MODIFICADO: Se añade .header.nav-active */
