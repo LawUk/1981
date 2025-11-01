@@ -924,3 +924,20 @@ address.footer-text {
   }
 
 }
+
+/**
+*Media phones
+**/
+@media (max-width: 991px) {
+
+  .navbar.active .navbar-link,
+  .navbar.active .cart-btn .span,
+  .navbar.active .cart-btn ion-icon {
+    color: var(--text-dark-stone);
+  }
+
+  .navbar.active .navbar-link:is(:hover, :focus-visible) {
+    color: var(--bg-accent-gold); /* Mantiene el color hover dorado */
+  }
+
+}
