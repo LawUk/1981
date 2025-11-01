@@ -1,5 +1,5 @@
 /*-----------------------------------*\
-  #style.css 
+  #style.css
 \*-----------------------------------*/
 
 /*-----------------------------------*\
@@ -537,7 +537,7 @@ body {
 
 .footer {
   position: relative;
-  background-color: var(--bg-stone-gray);
+  background-color: var(--bg-light-sand); /* <-- MEJORA v7: CAMBIADO DE GRIS A ARENA */
   padding-block-start: 160px;
   color: var(--text-dark-stone);
 }
