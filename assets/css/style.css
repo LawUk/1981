@@ -345,15 +345,11 @@ body {
   width: 100%;
   padding-block: 25px;
   z-index: 4;
-  /* Texto claro por defecto (sobre el hero oscuro) */
-  color: var(--bg-light-sand);
 }
 
 .header.active {
   background-color: var(--bg-light-sand);
   box-shadow: var(--shadow-1);
-  /* Texto oscuro en scroll (sobre fondo claro) */
-  color: var(--text-dark-stone);
 }
 
 .header .container {
@@ -397,7 +393,6 @@ body {
 
 .navbar-link {
   padding: 10px 20px;
-  /* Color quitado para heredar del .header */
 }
 
 .cart-btn {
@@ -405,33 +400,50 @@ body {
   align-items: center;
   gap: 4px;
   padding: 25px 20px;
-  /* Color quitado para heredar del .header */
-}
-
-/* --- MEJORA v5: Hover transparente con acento dorado --- */
-.navbar-link:is(:hover, :focus-visible),
-.cart-btn:is(:hover, :focus-visible) {
-  background-color: transparent; /* <-- CAMBIADO A TRANSPARENTE */
-  color: var(--bg-accent-gold);   /* <-- CAMBIADO A DORADO */
 }
 
 
-/* --- MEJORA v5: Arreglo de logo e icono de carrito --- */
-/* El filtro SÓLO se aplica al logo (imagen) */
+/* --- MEJORA v6: REGLAS EXPLÍCITAS PARA EL HEADER --- */
+
+/* 1. Estado por defecto (fondo azul) */
+.header {
+  color: var(--bg-light-sand); /* Color de texto para links */
+}
 .header .logo img {
-  filter: brightness(0) invert(1);
+  filter: brightness(0) invert(1); /* Logo se vuelve blanco */
   transition: filter var(--transition-1);
 }
-
-/* El icono del carrito (ion-icon) AHORA HEREDA EL COLOR */
-/* ya no necesita una regla de filtro */
-
-.header.active .logo img {
-  /* Devuelve el logo a color original (negro) en scroll */
-  filter: none;
+.cart-btn .span,
+.cart-btn ion-icon {
+  color: var(--bg-light-sand); /* Texto e icono de carrito se vuelven blancos */
+  transition: color var(--transition-1);
 }
 
-/* El icono del carrito ahora heredará el color oscuro de .header.active */
+/* 2. Estado Activo/Scroll (fondo claro) */
+.header.active {
+  color: var(--text-dark-stone); /* Color de texto para links */
+}
+.header.active .logo img {
+  filter: none; /* Logo vuelve a ser negro */
+}
+.header.active .cart-btn .span,
+.header.active .cart-btn ion-icon {
+  color: var(--text-dark-stone); /* Texto e icono de carrito se vuelven oscuros */
+}
+
+/* 3. Estado Hover (Transparente + Dorado) */
+.navbar-link:is(:hover, :focus-visible) {
+  background-color: transparent;
+  color: var(--bg-accent-gold); /* Links se vuelven dorados */
+}
+.cart-btn:is(:hover, :focus-visible) {
+  background-color: transparent;
+}
+.cart-btn:is(:hover, :focus-visible) .span,
+.cart-btn:is(:hover, :focus-visible) ion-icon {
+  color: var(--bg-accent-gold); /* Carrito (texto e icono) se vuelve dorado */
+}
+/* Fin de las reglas del header */
 
 
 /*-----------------------------------*\
