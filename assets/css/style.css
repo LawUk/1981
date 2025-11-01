@@ -867,7 +867,7 @@ address.footer-text {
 
   /* MODIFICADO: Se añade padding vertical a los links */
   .navbar-link {
-    padding-block: 30px;
+    padding-block: 32.5px;
   }
 
   .navbar .btn {
