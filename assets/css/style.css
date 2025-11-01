@@ -1,5 +1,5 @@
 /*-----------------------------------*\
-  #style.css
+  #style.css 
 \*-----------------------------------*/
 
 /*-----------------------------------*\
@@ -290,6 +290,11 @@ body {
   position: relative;
 }
 
+/* --- MEJORA v8: Forzar ratio cuadrado en tarjetas de producto --- */
+.product-card .product-banner.img-holder {
+  aspect-ratio: 1 / 1;
+}
+
 .product-card .card-content {
   margin-block-start: 30px;
 }
@@ -537,7 +542,7 @@ body {
 
 .footer {
   position: relative;
-  background-color: var(--bg-light-sand); /* <-- MEJORA v7: CAMBIADO DE GRIS A ARENA */
+  background-color: var(--bg-light-sand);
   padding-block-start: 160px;
   color: var(--text-dark-stone);
 }
