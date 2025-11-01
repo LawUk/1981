@@ -343,8 +343,6 @@ body {
   margin: 15px auto; /* <-- 15px arriba/abajo, 'auto' a izq/der */
   padding: 10px 25px;
   justify-content: center; /* <-- Centra el texto DENTRO */
-  min-width: 0;            /* <-- Anula regla anterior */
-  max-width: 100%;         /* <-- Anula regla anterior */
 }
 
 .header {
