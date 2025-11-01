@@ -1037,3 +1037,8 @@ address.footer-text {
     margin-block-end: 30px; 
   }
 }
+
+/* --- Aplicar la fuente al título del Lookbook --- */
+#lookbook-title {
+  font-family: 'LookbookFont', var(--fontFamily-clashDisplay), cursive;
+}
