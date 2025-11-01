@@ -231,7 +231,6 @@ body {
 
 
 .img-holder {
-  aspect-ratio: var(--width) / var(--height);
   background-color: var(--bg-stone-gray);
   overflow: hidden;
 }
@@ -239,7 +238,7 @@ body {
 .img-cover {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; /* <-- MEJORA v10: CAMBIADO DE 'cover' A 'contain' */
 }
 
 .section {
@@ -290,7 +289,7 @@ body {
   position: relative;
 }
 
-/* --- MEJORA v8: Forzar ratio cuadrado en tarjetas de producto --- */
+/* --- MEJORA v9: Forzar ratio cuadrado en tarjetas de producto --- */
 .product-card .product-banner.img-holder {
   aspect-ratio: 1 / 1;
 }
@@ -542,7 +541,7 @@ body {
 
 .footer {
   position: relative;
-  background-color: var(--bg-light-sand);
+  background-color: var(--bg-light-sand); /* <-- MEJORA v7: CAMBIADO DE GRIS A ARENA */
   padding-block-start: 160px;
   color: var(--text-dark-stone);
 }
