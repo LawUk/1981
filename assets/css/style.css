@@ -399,9 +399,6 @@ body {
   padding: 10px 20px;
   /* Color quitado para heredar del .header */
 }
-.navbar-link:is(:hover, :focus-visible) {
-  background-color: var(--bg-stone-gray);
-}
 
 .cart-btn {
   display: flex;
@@ -410,6 +407,19 @@ body {
   padding: 25px 20px;
   /* Color quitado para heredar del .header */
 }
+
+/* --- MEJORA v4: Arreglo de hover en links de navegación --- */
+.navbar-link:is(:hover, :focus-visible),
+.cart-btn:is(:hover, :focus-visible) {
+  background-color: var(--bg-stone-gray);
+  color: var(--text-dark-stone); /* <-- AÑADIDO: color de texto oscuro en hover */
+}
+
+/* --- MEJORA v4: Asegurar que el icono del carrito cambie en hover --- */
+.cart-btn:is(:hover, :focus-visible) ion-icon {
+  filter: none; /* <-- AÑADIDO: quita el filtro para que el icono sea oscuro */
+}
+
 
 /* --- MEJORA v3: Arreglo de logo e icono de carrito oscuros --- */
 .header .logo img,
