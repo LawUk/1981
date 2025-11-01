@@ -883,8 +883,8 @@ address.footer-text {
   }
 
   .hero .shape-1 {
-  top: -10px;   
-  left: -90px;  
+  top: 10px;   
+  left: -45px;  
   z-index: 2;
   }
 
