@@ -358,7 +358,7 @@ body {
 .header.active,
 .header.nav-active {
   background-color: var(--bg-light-sand);
-  box-shadow: var(--shadow-1);
+  box-shadow: 0 2px 4px hsla(0, 0%, 0%, 0.05);
 }
 
 .header .container {
@@ -735,7 +735,7 @@ address.footer-text {
   }
 
   .section {
-    padding-block: 150px;
+    padding-block: 135px;
   }
 
   .scrollbar-item {
