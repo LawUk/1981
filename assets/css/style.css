@@ -408,32 +408,30 @@ body {
   /* Color quitado para heredar del .header */
 }
 
-/* --- MEJORA v4: Arreglo de hover en links de navegación --- */
+/* --- MEJORA v5: Hover transparente con acento dorado --- */
 .navbar-link:is(:hover, :focus-visible),
 .cart-btn:is(:hover, :focus-visible) {
-  background-color: var(--bg-stone-gray);
-  color: var(--text-dark-stone); /* <-- AÑADIDO: color de texto oscuro en hover */
-}
-
-/* --- MEJORA v4: Asegurar que el icono del carrito cambie en hover --- */
-.cart-btn:is(:hover, :focus-visible) ion-icon {
-  filter: none; /* <-- AÑADIDO: quita el filtro para que el icono sea oscuro */
+  background-color: transparent; /* <-- CAMBIADO A TRANSPARENTE */
+  color: var(--bg-accent-gold);   /* <-- CAMBIADO A DORADO */
 }
 
 
-/* --- MEJORA v3: Arreglo de logo e icono de carrito oscuros --- */
-.header .logo img,
-.cart-btn ion-icon {
-  /* Invierte el color (negro -> blanco) por defecto */
+/* --- MEJORA v5: Arreglo de logo e icono de carrito --- */
+/* El filtro SÓLO se aplica al logo (imagen) */
+.header .logo img {
   filter: brightness(0) invert(1);
   transition: filter var(--transition-1);
 }
 
-.header.active .logo img,
-.header.active .cart-btn ion-icon {
-  /* Devuelve a color original (negro) en scroll */
+/* El icono del carrito (ion-icon) AHORA HEREDA EL COLOR */
+/* ya no necesita una regla de filtro */
+
+.header.active .logo img {
+  /* Devuelve el logo a color original (negro) en scroll */
   filter: none;
 }
+
+/* El icono del carrito ahora heredará el color oscuro de .header.active */
 
 
 /*-----------------------------------*\
