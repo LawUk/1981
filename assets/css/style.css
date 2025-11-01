@@ -292,7 +292,7 @@ body {
 /* --- MEJORA v9: Forzar ratio cuadrado en tarjetas de producto --- */
 .product-card .product-banner.img-holder {
   aspect-ratio: 1 / 1;
-  border-radius: 12px; 
+  border-radius: 12px; /* <-- AÑADIDO: Redondear productos */
 }
 
 .product-card .card-content {
@@ -466,6 +466,7 @@ body {
   background-color: var(--bg-deep-sea);
   color: var(--bg-light-sand);
   padding-block: 130px 75px;
+  overflow: hidden; /* <-- AÑADIDO: Ocultar estrella desbordada */
 }
 
 .hero .container {
@@ -820,6 +821,8 @@ address.footer-text {
   }
 
   .cart-btn {
+    /* MODIFICADO: Esta regla ahora está vacía o se puede borrar, */
+    /* pero la dejamos por si se vuelve a añadir el botón */
     border-inline-start: 2px solid var(--border-dark-stone);
     padding-inline-start: 50px;
     margin-inline-start: 20px;
@@ -859,12 +862,18 @@ address.footer-text {
   }
 
   .cart-btn {
+    padding-block: 35px; /* Esta regla ya no aplica a nada visible */
+  }
+
+  /* MODIFICADO: Se añade padding vertical a los links */
+  .navbar-link {
     padding-block: 35px;
   }
 
   .navbar .btn {
     display: block;
-    padding: 10px 25px;
+    /* MODIFICADO: Se ajusta padding vertical y margen izquierdo */
+    padding: 35px 25px;
     text-transform: uppercase;
     margin-inline-start: 40px;
   }
@@ -880,13 +889,14 @@ address.footer-text {
 
   .hero-banner {
     position: relative;
-    z-index: 1;
+    z-index: 1; /* <-- Importante para la estrella */
   }
 
   .hero .shape-1 {
-  top: -45px;   
-  left: -45px;  
-  z-index: 0;
+    /* MODIFICADO: Posición y z-index de la estrella */
+    top: -20px;
+    left: 580px;
+    z-index: 0; /* <-- Para que se ponga detrás del hero-banner */
   }
 
   .hero .shape-2 {
