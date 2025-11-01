@@ -966,7 +966,7 @@ address.footer-text {
 }
 
 /*-----------------------------------*\
-  # LOOKBOOK (NUEVO)
+  # LOOKBOOK (MODIFICADO)
 \*-----------------------------------*/
 
 .lookbook-grid {
@@ -975,22 +975,65 @@ address.footer-text {
   column-gap: 20px;
 }
 
+/* El <li> ahora es solo un contenedor de flujo */
 .lookbook-grid li {
-  /* Evita que una imagen se parta entre dos columnas */
-  break-inside: avoid;
-  margin-block-end: 20px;
+  margin-block-end: 20px; 
 }
 
-.lookbook-grid img {
-  width: 100%; /* La imagen ocupa todo el ancho de la columna */
-  height: auto; /* La altura se ajusta automáticamente */
-  border-radius: 12px; /* Mantiene las esquinas redondeadas */
+/* NUEVO: Contenedor para la imagen y el botón */
+.lookbook-item-container {
+  position: relative; /* Para posicionar el botón */
+  break-inside: avoid; /* Evita que se parta la imagen */
+  overflow: hidden; /* Para el border-radius */
+  border-radius: 12px; /* Mueve el radius aquí */
+  display: block; /* Asegura el comportamiento de bloque */
 }
+
+.lookbook-item-container img {
+  width: 100%; 
+  height: auto; 
+  display: block; /* Quita espacio extra de la imagen */
+  transition: var(--transition-1);
+}
+
+/* NUEVO: Botón de descarga */
+.download-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0; /* Oculto por defecto */
+  transition: var(--transition-1);
+  z-index: 2;
+  gap: 8px; /* Espacio entre icono y texto */
+  
+  /* Ajustes para que se vea bien el botón de tu CSS */
+  padding: 10px 20px;
+  font-size: var(--fontSize-9);
+}
+
+.download-btn ion-icon {
+  font-size: 1.8rem;
+}
+
+/* Efecto al pasar el mouse */
+.lookbook-item-container:is(:hover, :focus-within) img {
+  filter: brightness(0.6); /* Oscurece la imagen */
+}
+
+.lookbook-item-container:is(:hover, :focus-within) .download-btn {
+  opacity: 1; /* Muestra el botón */
+}
+
 
 /* En pantallas grandes, pasamos a 3 columnas */
 @media (min-width: 992px) {
   .lookbook-grid {
     column-count: 3;
     column-gap: 30px;
+  }
+  
+  .lookbook-grid li {
+    margin-block-end: 30px; 
   }
 }
