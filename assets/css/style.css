@@ -1047,3 +1047,22 @@ address.footer-text {
 #lookbook-title {
   font-family: 'LookbookFont', var(--fontFamily-clashDisplay), cursive;
 }
+
+/* --- NUEVO: Arreglar espacio superior en Lookbook --- */
+.lookbook-main-section {
+  /* El header en móvil mide 85px.
+    El padding de 75px de .section no es suficiente.
+    Usamos 130px (igual que el hero de index.html) 
+    para darle espacio.
+  */
+  padding-block-start: 130px;
+}
+
+/* En escritorio (768px+), .section ya tiene 150px,
+  así que lo mantenemos.
+*/
+@media (min-width: 768px) {
+  .lookbook-main-section {
+    padding-block-start: 150px;
+  }
+}
