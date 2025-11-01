@@ -964,3 +964,33 @@ address.footer-text {
   }
 
 }
+
+/*-----------------------------------*\
+  # LOOKBOOK (NUEVO)
+\*-----------------------------------*/
+
+.lookbook-grid {
+  /* 2 columnas en móvil/tablet */
+  column-count: 2;
+  column-gap: 20px;
+}
+
+.lookbook-grid li {
+  /* Evita que una imagen se parta entre dos columnas */
+  break-inside: avoid;
+  margin-block-end: 20px;
+}
+
+.lookbook-grid img {
+  width: 100%; /* La imagen ocupa todo el ancho de la columna */
+  height: auto; /* La altura se ajusta automáticamente */
+  border-radius: 12px; /* Mantiene las esquinas redondeadas */
+}
+
+/* En pantallas grandes, pasamos a 3 columnas */
+@media (min-width: 992px) {
+  .lookbook-grid {
+    column-count: 3;
+    column-gap: 30px;
+  }
+}
