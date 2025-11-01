@@ -2,8 +2,7 @@
   #font.css
 \*-----------------------------------*/
 
-/* 
- * Copyright 2024 You
+/* * Copyright 2024 You
  */
 
 @font-face {
@@ -21,4 +20,13 @@
 
   /* Controla cómo se carga una fuente: auto, block, swap, fallback, optional */
   font-display: swap;
+}
+
+/* --- NUEVO: Cargar la fuente personalizada del Lookbook --- */
+@font-face {
+  font-family: 'LookbookFont';
+  src: url('../fonts/lookbook.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap; /* Añadido para consistencia */
 }
