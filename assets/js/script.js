@@ -3,7 +3,6 @@
 /**
  * Mobile Navbar Toggle
  */
-
 const navbar = document.querySelector("[data-navbar]");
 const navToggler = document.querySelector("[data-nav-toggler]");
 const header = document.querySelector("[data-header]");
@@ -18,28 +17,62 @@ if (navbar && navToggler && header) {
 /**
  * Header Active
  */
-
 if (header) {
-
-  // --- INICIO DE LA MODIFICACIÓN ---
-
-  // 1. Revisa si el header ya tiene la clase 'active' cuando carga la página
-  //    (Esto será 'true' en lookbook.html, y 'false' en index.html)
+  // Revisa si el header ya tiene la clase 'active' cuando carga
   const isFixedActive = header.classList.contains("active");
 
   window.addEventListener("scroll", () => {
-    
     if (isFixedActive) {
-      // 2. Si la página cargó 'active' (como lookbook.html),
-      //    NUNCA quites la clase. Solo asegúrate de que siempre esté.
+      // Si la página cargó 'active' (como lookbook.html), nunca quites la clase
       header.classList.add("active");
     } else {
-      // 3. Si la página cargó normal (como index.html),
-      //    usa la lógica de scroll que ya teníamos.
+      // Si la página cargó normal (como index.html), usa la lógica de scroll
       header.classList.toggle("active", window.scrollY > 50);
     }
-
   });
+}
 
-  // --- FIN DE LA MODIFICACIÓN ---
+/**
+ * NUEVO: Lookbook Dinámico
+ * Esto se ejecutará solo si encuentra la rejilla del lookbook en la página.
+ */
+
+// 1. Busca la rejilla del lookbook
+const lookbookGrid = document.querySelector(".lookbook-grid");
+
+// 2. Si la encuentra en esta página...
+if (lookbookGrid) {
+  
+  // 3. Busca el archivo JSON que creamos
+  fetch('imagenes.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('No se pudo cargar imagenes.json');
+      }
+      return response.json();
+    })
+    .then(imagenes => {
+      // 4. Para cada nombre de imagen en el JSON...
+      imagenes.forEach(nombreImagen => {
+        
+        // 5. Crea los elementos HTML
+        const li = document.createElement('li');
+        const img = document.createElement('img');
+        
+        // 6. Configura la imagen
+        // (Asegúrate que tu carpeta de imágenes sea correcta)
+        img.src = `./assets/images/lookbook/${nombreImagen}`;
+        img.alt = "Imagen del Lookbook";
+        img.loading = "lazy";
+        
+        // 7. Los añade a la página
+        li.appendChild(img);
+        lookbookGrid.appendChild(li);
+      });
+    })
+    .catch(error => {
+      // 8. Si algo sale mal, muestra un error
+      console.error('Error al cargar el lookbook:', error);
+      lookbookGrid.innerHTML = "<li><p>Error al cargar las imágenes.</p></li>";
+    });
 }
