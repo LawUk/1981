@@ -454,6 +454,10 @@ body {
   #HERO
 \*-----------------------------------*/
 
+.hero-banner .img-holder {
+  border-radius: 20px; 
+}
+
 .hero {
   background-color: var(--bg-deep-sea);
   color: var(--bg-light-sand);
