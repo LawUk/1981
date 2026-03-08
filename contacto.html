@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto - 1981.</title>
+  <meta name="description" content="Escríbenos. Para pedidos, ideas, colaboraciones, o solo para hablar de moda y café.">
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/fonts/font.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/contacto.css">
+</head>
+
+<body>
+
+  <header class="header active" data-header>
+    <div class="container">
+      <a href="./index.html" class="logo">
+        <img src="./assets/images/logo.svg" width="132" height="27" alt="1981 - Página de inicio">
+      </a>
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li><a href="./lookbook.html" class="navbar-link">Lookbook</a></li>
+          <li><a href="./blog.html" class="navbar-link">Blog</a></li>
+        </ul>
+        <a href="./contacto.html" class="btn active-link">Contáctanos</a>
+      </nav>
+      <button class="nav-open-btn" aria-label="toggle menu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+    </div>
+  </header>
+
+
+  <main>
+
+    <section class="contacto-hero">
+      <div class="container">
+        <p class="contacto-hero-label title">Hablemos</p>
+        <h1 class="h1 title contacto-hero-title">Escríbenos.</h1>
+        <p class="contacto-hero-text">Para pedidos, ideas, colaboraciones,<br>o solo para hablar de ropa y café.</p>
+      </div>
+    </section>
+
+
+    <section class="section contacto-section">
+      <div class="container">
+
+        <div class="contacto-layout">
+
+          <!-- FORMULARIO -->
+          <div class="contacto-form-wrap">
+            <h2 class="h3 title contacto-form-title">Cuéntanos</h2>
+
+            <form class="contacto-form" id="contacto-form" novalidate>
+
+              <div class="form-group">
+                <label class="form-label title" for="nombre">Tu nombre</label>
+                <input type="text" id="nombre" name="nombre" class="form-input" placeholder="Como quieras que te llamemos" autocomplete="name">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label title" for="correo">Correo electrónico <span class="form-required">*</span></label>
+                <input type="email" id="correo" name="correo" class="form-input" placeholder="para responderte" required autocomplete="email">
+              </div>
+
+              <div class="form-group">
+                <label class="form-label title" for="asunto">¿De qué se trata?</label>
+                <div class="form-select-wrap">
+                  <select id="asunto" name="asunto" class="form-select">
+                    <option value="">Elige una opción</option>
+                    <option value="pedido">Quiero hacer un pedido</option>
+                    <option value="descuento">Descuento ecológico 13%</option>
+                    <option value="colaboracion">Colaboración / lookbook</option>
+                    <option value="devolucion">Cambio o devolución</option>
+                    <option value="otro">Otra cosa</option>
+                  </select>
+                  <ion-icon name="chevron-down-outline" aria-hidden="true"></ion-icon>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label title" for="mensaje">Mensaje <span class="form-required">*</span></label>
+                <textarea id="mensaje" name="mensaje" class="form-textarea" rows="5" placeholder="Sin formato especial, sin protocolo. Lo que quieras decir." required></textarea>
+              </div>
+
+              <!-- Descuento ecológico: opción de adjuntar foto -->
+              <div class="form-group form-eco" id="form-eco-section" style="display:none">
+                <div class="form-eco-banner">
+                  <span>🌱</span>
+                  <div>
+                    <p class="title form-eco-title">Descuento del 13%</p>
+                    <p class="form-eco-desc">Adjunta una foto de tu acción ecológica y te enviamos el código al responder.</p>
+                  </div>
+                </div>
+                <label class="form-label title" for="foto-eco">Foto ecológica</label>
+                <div class="form-file-wrap">
+                  <input type="file" id="foto-eco" name="foto-eco" class="form-file" accept="image/*">
+                  <label for="foto-eco" class="form-file-label">
+                    <ion-icon name="image-outline" aria-hidden="true"></ion-icon>
+                    <span id="file-label-text">Subir foto (JPG, PNG · máx. 5MB)</span>
+                  </label>
+                </div>
+              </div>
+
+              <button type="submit" class="btn contacto-submit" id="contacto-submit">
+                <span class="span" id="submit-text">Enviar mensaje</span>
+                <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+              </button>
+
+            </form>
+
+            <!-- Estado: enviado -->
+            <div class="contacto-success" id="contacto-success" style="display:none">
+              <span class="contacto-success-icon">✓</span>
+              <h3 class="h3 title">Mensaje enviado.</h3>
+              <p>Te respondemos en cuanto podamos — generalmente ese mismo día.</p>
+              <button class="btn btn-secondary" onclick="resetForm()">
+                <span class="span">Enviar otro</span>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- SIDEBAR DE INFO -->
+          <aside class="contacto-aside">
+
+            <div class="contacto-info-block">
+              <h3 class="title contacto-info-title">Correo directo</h3>
+              <a href="mailto:1981@support.com" class="contacto-email">1981@support.com</a>
+              <p class="contacto-info-note">Respondemos a todos los correos. A veces tarde — nunca nunca.</p>
+            </div>
+
+            <div class="contacto-info-block">
+              <h3 class="title contacto-info-title">Tiempos de respuesta</h3>
+              <div class="contacto-timing">
+                <div class="timing-row">
+                  <span class="timing-dot timing-fast"></span>
+                  <span>Pedidos y preguntas</span>
+                  <span class="timing-time">1–2 días</span>
+                </div>
+                <div class="timing-row">
+                  <span class="timing-dot timing-mid"></span>
+                  <span>Descuento ecológico</span>
+                  <span class="timing-time">mismo día</span>
+                </div>
+                <div class="timing-row">
+                  <span class="timing-dot timing-slow"></span>
+                  <span>Colaboraciones</span>
+                  <span class="timing-time">3–5 días</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="contacto-info-block">
+              <h3 class="title contacto-info-title">También estamos en</h3>
+              <a href="https://instagram.com" target="_blank" rel="noopener" class="contacto-social">
+                <ion-icon name="logo-instagram" aria-hidden="true"></ion-icon>
+                @1981.studio
+              </a>
+            </div>
+
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="./index.html" class="logo">
+            <img src="./assets/images/logo.svg" width="132" height="27" loading="lazy" alt="1981 home">
+          </a>
+          <p class="footer-text">Marca que ha sido creada por hobbie, así que tranquilo.</p>
+        </div>
+        <div class="footer-list">
+          <p class="footer-list-title title">Contacto</p>
+          <a href="mailto:1981@support.com" class="email">1981@support.com</a>
+        </div>
+        <div class="footer-list">
+          <p class="footer-list-title title">Suscribete para recibir noticias</p>
+          <input type="email" placeholder="Coloca tu correo electrónico" class="input-field">
+          <button class="btn btn-secondary">Suscribir</button>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="wrapper">
+          <div class="link-wrapper">
+            <a href="./equipo.html" class="footer-bottom-link">Nuestro equipo</a>
+            <a href="./medidas.html" class="footer-bottom-link">Medidas</a>
+          </div>
+          <div class="link-wrapper">
+            <a href="./terminos.html" class="footer-bottom-link">Términos & Condiciones</a>
+            <a href="./terminos.html#privacidad" class="footer-bottom-link">Política de privacidad</a>
+          </div>
+        </div>
+        <p class="copyright">&copy; 2026 1981.</p>
+      </div>
+      <img src="./assets/images/footer-shape-1.png" width="245" height="165" loading="lazy" alt="" aria-hidden="true" class="shape shape-1">
+      <img src="./assets/images/footer-shape-2.png" width="138" height="316" loading="lazy" alt="" aria-hidden="true" class="shape shape-2">
+      <img src="./assets/images/footer-shape-3.png" width="346" height="92" loading="lazy" alt="" aria-hidden="true" class="shape shape-3">
+    </div>
+  </footer>
+
+  <script src="./assets/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

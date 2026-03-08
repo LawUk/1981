@@ -4,6 +4,7 @@
     "tag": "Moda",
     "fecha": "Feb 2026",
     "minutos": 4,
+    "imagen": null,
     "titulo": "Comprar menos, usar más: la filosofía detrás de cada prenda",
     "resumen": "Cada pieza que hacemos está pensada para durar. No para la temporada, sino para los años. Aquí te contamos cómo tomamos las decisiones de diseño y por qué elegimos los materiales que elegimos.",
     "cuerpo": [
@@ -20,6 +21,7 @@
     "tag": "Ecología",
     "fecha": "Dic 2025",
     "minutos": 3,
+    "imagen": null,
     "titulo": "El descuento del 13%: reciclar como acto político",
     "resumen": "No es un truco de marketing. Cuando alguien nos manda una foto reciclando o donando, le damos un descuento real. Porque creemos que el consumo responsable merece ser recompensado, no penalizado.",
     "cuerpo": [
@@ -36,6 +38,7 @@
     "tag": "Reflexión",
     "fecha": "Nov 2025",
     "minutos": 6,
+    "imagen": null,
     "titulo": "Hacer una marca por hobbie: lo que nadie te dice",
     "resumen": "1981. empezó sin plan de negocios, sin inversores, sin pitch deck. Empezó con ganas. Aquí hablamos honestamente de cómo es construir algo desde cero cuando el objetivo no es escalar, sino crear.",
     "cuerpo": [
@@ -53,6 +56,7 @@
     "tag": "Moda",
     "fecha": "Oct 2025",
     "minutos": 3,
+    "imagen": null,
     "titulo": "Lookbook Vol. 1: detrás de las fotos",
     "resumen": "Las fotos que ves en el lookbook no son de estudio. Son de lugares reales, con personas reales. Aquí contamos cómo fue la primera sesión y qué queríamos transmitir con cada toma.",
     "cuerpo": [

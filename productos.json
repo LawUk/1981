@@ -1,0 +1,47 @@
+[
+  {
+    "id": "camiseta-lino",
+    "nombre": "Camiseta de lino",
+    "categoria": "Superior",
+    "precio": "$580",
+    "precio_num": 580,
+    "descripcion": "Corte holgado, cuello redondo. Lino 100% pre-lavado para que llegue ya suavecita. Pesa poco, aguanta mucho.",
+    "imagenes": ["product-1.png"],
+    "tallas": [
+      {"nombre": "XS", "stock": true},
+      {"nombre": "S",  "stock": true},
+      {"nombre": "M",  "stock": true},
+      {"nombre": "L",  "stock": true},
+      {"nombre": "XL", "stock": false}
+    ],
+    "detalles": [
+      {"label": "Material", "valor": "100% lino pre-lavado"},
+      {"label": "Origen",   "valor": "Hecho en México"},
+      {"label": "Cuidado",  "valor": "Lavado a mano, tender a la sombra"},
+      {"label": "Fit",      "valor": "Holgado — sube una talla si dudas"}
+    ],
+    "stock": true
+  },
+  {
+    "id": "sudadera-organica",
+    "nombre": "Sudadera orgánica",
+    "categoria": "Superior",
+    "precio": "$890",
+    "precio_num": 890,
+    "descripcion": "Felpa de algodón orgánico, interior cepillado. Sin capucha, sin logo visible. Solo comodidad.",
+    "imagenes": ["product-2.png"],
+    "tallas": [
+      {"nombre": "S",  "stock": true},
+      {"nombre": "M",  "stock": true},
+      {"nombre": "L",  "stock": true},
+      {"nombre": "XL", "stock": true}
+    ],
+    "detalles": [
+      {"label": "Material", "valor": "80% algodón orgánico, 20% reciclado"},
+      {"label": "Origen",   "valor": "Hecho en México"},
+      {"label": "Cuidado",  "valor": "Lavado a 30°, voltear al revés"},
+      {"label": "Fit",      "valor": "Regular — toma tu talla normal"}
+    ],
+    "stock": true
+  }
+]

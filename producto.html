@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Producto - 1981.</title>
+  <meta name="description" content="Detalle de producto 1981.">
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/fonts/font.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/producto.css">
+</head>
+
+<body>
+
+  <header class="header active" data-header>
+    <div class="container">
+      <a href="./index.html" class="logo">
+        <img src="./assets/images/logo.svg" width="132" height="27" alt="1981 - Página de inicio">
+      </a>
+      <nav class="navbar" data-navbar>
+        <ul class="navbar-list">
+          <li><a href="./lookbook.html" class="navbar-link">Lookbook</a></li>
+          <li><a href="./blog.html" class="navbar-link">Blog</a></li>
+        </ul>
+        <a href="./contacto.html" class="btn">Contáctanos</a>
+      </nav>
+      <button class="nav-open-btn" aria-label="toggle menu" data-nav-toggler>
+        <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+      </button>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- BREADCRUMB -->
+    <div class="producto-breadcrumb">
+      <div class="container">
+        <a href="./index.html" class="breadcrumb-link">Inicio</a>
+        <span aria-hidden="true">›</span>
+        <span id="breadcrumb-nombre">Cargando...</span>
+      </div>
+    </div>
+
+
+    <!-- LOADING STATE -->
+    <div id="producto-loading" class="section">
+      <div class="container producto-skeleton-wrap">
+        <div class="producto-skeleton-img"></div>
+        <div class="producto-skeleton-info">
+          <div class="skeleton-line skeleton-tag"></div>
+          <div class="skeleton-line skeleton-title"></div>
+          <div class="skeleton-line skeleton-price"></div>
+          <div class="skeleton-line skeleton-p"></div>
+          <div class="skeleton-line skeleton-p"></div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- CONTENIDO DEL PRODUCTO -->
+    <div id="producto-contenido" style="display:none">
+
+      <section class="section producto-section">
+        <div class="container">
+          <div class="producto-layout">
+
+            <!-- Galería de imágenes -->
+            <div class="producto-gallery">
+              <div class="producto-img-main">
+                <img id="producto-img-main" src="" alt="" class="producto-main-img">
+              </div>
+              <div class="producto-img-thumbs" id="producto-thumbs"></div>
+            </div>
+
+            <!-- Info del producto -->
+            <div class="producto-info">
+
+              <div class="producto-info-top">
+                <span class="producto-tag title" id="producto-tag"></span>
+                <span class="producto-stock" id="producto-stock"></span>
+              </div>
+
+              <h1 class="h2 title producto-nombre" id="producto-nombre"></h1>
+              <p class="producto-precio" id="producto-precio"></p>
+              <p class="producto-desc" id="producto-desc"></p>
+
+              <!-- Selector de talla -->
+              <div class="producto-tallas" id="producto-tallas-wrap">
+                <div class="producto-tallas-header">
+                  <p class="title producto-tallas-label">Talla</p>
+                  <a href="./medidas.html" class="producto-guia-link">
+                    <ion-icon name="ruler-outline" aria-hidden="true"></ion-icon>
+                    Guía de medidas
+                  </a>
+                </div>
+                <div class="producto-tallas-grid" id="producto-tallas-grid"></div>
+              </div>
+
+              <!-- Botones de acción -->
+              <div class="producto-actions">
+                <button class="btn producto-btn-carrito" id="btn-agregar-carrito" disabled>
+                  <ion-icon name="bag-outline" aria-hidden="true"></ion-icon>
+                  <span class="span">Agregar al carrito</span>
+                </button>
+                <button class="btn btn-secondary producto-btn-contacto" onclick="window.location='./contacto.html?asunto=pedido'">
+                  <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+                  <span class="span">Pedir por correo</span>
+                </button>
+              </div>
+
+              <p class="producto-action-note">¿Prefieres hablar antes de comprar? <a href="./contacto.html" class="producto-link">Escríbenos.</a></p>
+
+              <!-- Detalles del producto -->
+              <div class="producto-detalles" id="producto-detalles"></div>
+
+              <!-- Info extra: descuento ecológico -->
+              <div class="producto-eco">
+                <span class="producto-eco-icon">🌱</span>
+                <div>
+                  <p class="title producto-eco-title">Descuento del 13%</p>
+                  <p class="producto-eco-desc">Mándanos una foto de una acción ecológica y te lo aplicamos. <a href="./contacto.html?asunto=descuento" class="producto-link">Más info</a></p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+
+    <!-- ERROR: producto no encontrado -->
+    <div id="producto-error" style="display:none" class="section">
+      <div class="container producto-error-inner">
+        <p class="title producto-error-code">404</p>
+        <h1 class="h2 title">Producto no encontrado.</h1>
+        <p>Este producto no existe o fue removido.</p>
+        <a href="./index.html" class="btn btn-secondary">
+          <span class="span">Volver al inicio</span>
+          <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+        </a>
+      </div>
+    </div>
+
+  </main>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="./index.html" class="logo">
+            <img src="./assets/images/logo.svg" width="132" height="27" loading="lazy" alt="1981 home">
+          </a>
+          <p class="footer-text">Marca que ha sido creada por hobbie, así que tranquilo.</p>
+        </div>
+        <div class="footer-list">
+          <p class="footer-list-title title">Contacto</p>
+          <a href="mailto:1981@support.com" class="email">1981@support.com</a>
+        </div>
+        <div class="footer-list">
+          <p class="footer-list-title title">Suscribete para recibir noticias</p>
+          <input type="email" placeholder="Coloca tu correo electrónico" class="input-field">
+          <button class="btn btn-secondary">Suscribir</button>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="wrapper">
+          <div class="link-wrapper">
+            <a href="./equipo.html" class="footer-bottom-link">Nuestro equipo</a>
+            <a href="./medidas.html" class="footer-bottom-link">Medidas</a>
+          </div>
+          <div class="link-wrapper">
+            <a href="./terminos.html" class="footer-bottom-link">Términos & Condiciones</a>
+            <a href="./terminos.html#privacidad" class="footer-bottom-link">Política de privacidad</a>
+          </div>
+        </div>
+        <p class="copyright">&copy; 2026 1981.</p>
+      </div>
+      <img src="./assets/images/footer-shape-1.png" width="245" height="165" loading="lazy" alt="" aria-hidden="true" class="shape shape-1">
+      <img src="./assets/images/footer-shape-2.png" width="138" height="316" loading="lazy" alt="" aria-hidden="true" class="shape shape-2">
+      <img src="./assets/images/footer-shape-3.png" width="346" height="92" loading="lazy" alt="" aria-hidden="true" class="shape shape-3">
+    </div>
+  </footer>
+
+  <script src="./assets/js/script.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
