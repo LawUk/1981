@@ -776,7 +776,14 @@ function carritoAgregar(item) {
 function carritoActualizarBadge() {
   const items = carritoGetItems();
   const total = items.reduce((s, i) => s + i.qty, 0);
-  document.querySelectorAll('[data-carrito-badge]').forEach(el => {
+
+  // Busca por id (navbar badge) y por data attribute (por si hay más)
+  const badges = [
+    document.getElementById('carrito-badge'),
+    ...document.querySelectorAll('[data-carrito-badge]')
+  ].filter(Boolean);
+
+  badges.forEach(el => {
     el.textContent = total > 0 ? total : '';
     el.style.display = total > 0 ? 'inline-flex' : 'none';
   });

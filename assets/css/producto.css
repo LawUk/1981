@@ -3,26 +3,26 @@
 \*-----------------------------------*/
 
 .producto-breadcrumb {
-  padding-block: 16px;
+  padding-block: 20px;
   border-block-end: 1.5px solid hsla(210, 11%, 15%, 0.08);
   margin-block-start: 70px;
 }
 
 .breadcrumb-link {
-  font-size: var(--fontSize-11);
+  font-size: var(--fontSize-9);
   opacity: 0.5;
   transition: opacity var(--transition-1);
 }
 .breadcrumb-link:hover { opacity: 1; }
 
 .producto-breadcrumb span {
-  font-size: var(--fontSize-11);
+  font-size: var(--fontSize-9);
   opacity: 0.3;
-  margin-inline: 6px;
+  margin-inline: 8px;
 }
 
 #breadcrumb-nombre {
-  font-size: var(--fontSize-11);
+  font-size: var(--fontSize-9);
   font-family: var(--fontFamily-clashDisplay);
   font-weight: var(--weight-semiBold);
 }
