@@ -33,12 +33,12 @@ if (productListTop || productListFeature) {
         li.innerHTML = `
           <div class="product-card text-center">
             <div class="card-banner">
-              <a href="${productoUrl}" class="product-card-img-link" tabindex="-1" aria-hidden="true">
-                <figure class="product-banner img-holder" style="--width: 448; --height: 470;">
-                  <img src="${imgSrc}" width="448" height="470" loading="lazy"
-                    alt="${p.nombre}" class="img-cover">
-                </figure>
-              </a>
+              <a href="${productoUrl}" class="product-card-img-link" tabindex="-1" aria-hidden="true"></a>
+              <figure class="product-banner img-holder" style="--width: 448; --height: 470;">
+                <img src="${imgSrc}" width="448" height="470" loading="lazy"
+                  alt="${p.nombre}" class="img-cover"
+                  onerror="this.style.display='none';this.parentElement.classList.add('img-missing')">
+              </figure>
               <button class="btn product-btn" data-id="${p.id}">
                 <ion-icon name="bag" aria-hidden="true"></ion-icon>
                 <span class="span">Agregar al carrito</span>

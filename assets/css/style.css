@@ -261,7 +261,8 @@ body {
   font-size: var(--fontSize-9);
   gap: 8px;
   opacity: 0;
-  
+  pointer-events: none;
+  white-space: nowrap;
   background-color: var(--bg-deep-sea);
   color: var(--bg-light-sand);
   border: 2px solid var(--border-dark-stone);
@@ -269,6 +270,7 @@ body {
   padding: 15px 30px;
   font-weight: var(--weight-semiBold);
   transition: var(--transition-1);
+  z-index: 3;
 }
 
 .product-btn ion-icon {
@@ -277,6 +279,7 @@ body {
 
 .product-card:is(:hover, :focus-within) .product-btn {
   opacity: 1;
+  pointer-events: auto;
 }
 
 .product-btn:is(:hover, :focus-visible) {
@@ -290,17 +293,23 @@ body {
   border-radius: 12px;
   overflow: hidden;
   background-color: var(--bg-white);
+  border: 1.5px solid hsla(210, 11%, 15%, 0.08);
 }
 
 .product-card .product-banner.img-holder {
   aspect-ratio: 4 / 5;
   border-radius: 12px;
   background-color: var(--bg-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .product-card .product-banner.img-holder .img-cover {
   object-fit: contain;
-  padding: 16px;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
 }
 
 .product-card .card-content {
@@ -1079,16 +1088,29 @@ address.footer-text {
   }
 }
 
-/* Link wrapper sobre imagen de producto — cubre todo el banner excepto el botón */
+/* Link overlay sobre imagen — clickeable, debajo del botón */
 .product-card-img-link {
   display: block;
   position: absolute;
   inset: 0;
-  z-index: 1;
+  z-index: 2;
   border-radius: 12px;
 }
 
 .product-card .product-btn {
-  position: relative;
-  z-index: 2;
+  z-index: 3;
+}
+
+/* Placeholder cuando la imagen del producto no carga */
+.product-card .img-holder.img-missing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--bg-white);
+}
+
+.product-card .img-holder.img-missing::after {
+  content: "📷";
+  font-size: 4rem;
+  opacity: 0.15;
 }
