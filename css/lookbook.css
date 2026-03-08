@@ -104,8 +104,32 @@
 
 
 /*-----------------------------------*\
-  #SKELETONS de carga
+  #SEPARADOR DE VOLUMEN
 \*-----------------------------------*/
+
+.lookbook-volume-separator {
+  column-span: all;
+  padding-block: 20px 10px;
+  margin-block-start: 20px;
+  border-block-start: 2px solid var(--border-dark-stone);
+  break-inside: avoid;
+}
+
+.lookbook-volume-separator:first-child {
+  margin-block-start: 0;
+  border-block-start: none;
+}
+
+.lookbook-volume-separator .title {
+  font-size: var(--fontSize-7);
+  color: var(--text-deep-sea);
+  opacity: 0.5;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+
+/*-----------------------------------*\
 
 .lookbook-skeleton {
   background: linear-gradient(
@@ -159,4 +183,16 @@
 
 .header.active .active-link {
   color: var(--bg-accent-gold);
+}
+
+
+/*-----------------------------------*\
+  #FIX: forzar ClashDisplay en el hero title
+  (style.css tiene una regla #lookbook-title que
+  aplica LookbookFont — la fuente caligráfica — 
+  y la sobreescribimos aquí para el nuevo hero)
+\*-----------------------------------*/
+
+.lookbook-hero .lookbook-hero-title {
+  font-family: var(--fontFamily-clashDisplay) !important;
 }

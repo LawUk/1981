@@ -138,6 +138,10 @@
   #TABLAS DE MEDIDAS
 \*-----------------------------------*/
 
+.medidas-how-section {
+  padding-block-end: 40px;
+}
+
 .medidas-table-subtitle {
   font-size: var(--fontSize-8);
   opacity: 0.6;

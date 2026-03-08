@@ -1,5 +1,16 @@
 [
-  "foto3.png",
-  "foto4.png",
-  "foto5.png"
+  {
+    "volumen": "Vol. 2 — 2026",
+    "carpeta": "lookbook/2026",
+    "fotos": []
+  },
+  {
+    "volumen": "Vol. 1 — 2025",
+    "carpeta": "lookbook/2025",
+    "fotos": [
+      "foto3.png",
+      "foto4.png",
+      "foto5.png"
+    ]
+  }
 ]
