@@ -19,7 +19,7 @@ const productListTop     = document.getElementById('product-list-top');
 const productListFeature = document.getElementById('product-list-feature');
 
 if (productListTop || productListFeature) {
-  fetch(basePath('productos.json'))
+  fetch(basePath('data/productos.json'))
     .then(r => { if (!r.ok) throw new Error('No se pudo cargar productos.json'); return r.json(); })
     .then(productos => {
 
@@ -143,7 +143,7 @@ const lookbookGrid = document.querySelector("#lookbook-grid");
 
 if (lookbookGrid) {
 
-  fetch(basePath('imagenes.json'))
+  fetch(basePath('data/imagenes.json'))
     .then(response => {
       if (!response.ok) throw new Error('No se pudo cargar imagenes.json');
       return response.json();
@@ -236,7 +236,7 @@ const lookbookBlogGrid = document.getElementById('lookbook-blog-grid');
 
 if (lookbookBlogGrid) {
 
-  fetch(basePath('blog.json'))
+  fetch(basePath('data/blog.json'))
     .then(r => {
       if (!r.ok) throw new Error('No se pudo cargar blog.json');
       return r.json();
@@ -290,7 +290,7 @@ const blogMainGrid = document.getElementById('blog-main-grid');
 
 if (blogMainGrid) {
 
-  fetch(basePath('blog.json'))
+  fetch(basePath('data/blog.json'))
     .then(r => {
       if (!r.ok) throw new Error('No se pudo cargar blog.json');
       return r.json();
@@ -385,7 +385,7 @@ if (entradaContenido) {
 
   } else {
 
-    fetch(basePath('blog.json'))
+    fetch(basePath('data/blog.json'))
       .then(r => {
         if (!r.ok) throw new Error('No se pudo cargar blog.json');
         return r.json();
@@ -634,7 +634,7 @@ if (productoContenido) {
     productoLoading.style.display = 'none';
     productoError.style.display   = 'block';
   } else {
-    fetch(basePath('productos.json'))
+    fetch(basePath('data/productos.json'))
       .then(r => { if (!r.ok) throw new Error('404'); return r.json(); })
       .then(productos => {
         const p = productos.find(x => x.id === productoId);

@@ -1,0 +1,210 @@
+[
+  {
+    "id": "thanks",
+    "nombre": "thanks",
+    "categoria": "Superior",
+    "precio": "$580",
+    "precio_num": 580,
+    "imagen_home": "product-1.png",
+    "imagenes": ["product-1.png"],
+    "descripcion": "Camiseta de manga corta. Corte holgado, cuello redondo. Algodón orgánico 100% pre-lavado.",
+    "tallas": [
+      { "nombre": "XS", "stock": true  },
+      { "nombre": "S",  "stock": true  },
+      { "nombre": "M",  "stock": true  },
+      { "nombre": "L",  "stock": true  },
+      { "nombre": "XL", "stock": false }
+    ],
+    "detalles": [
+      { "label": "Material", "valor": "100% algodón orgánico"      },
+      { "label": "Origen",   "valor": "Hecho en México"            },
+      { "label": "Cuidado",  "valor": "Lavado a mano, a la sombra" },
+      { "label": "Fit",      "valor": "Holgado"                    }
+    ],
+    "stock": true
+  },
+  {
+    "id": "for",
+    "nombre": "for",
+    "categoria": "Superior",
+    "precio": "$620",
+    "precio_num": 620,
+    "imagen_home": "product-2.png",
+    "imagenes": ["product-2.png"],
+    "descripcion": "Camiseta negra oversized. Diseño Happiness. Hombros caídos, largo extra.",
+    "tallas": [
+      { "nombre": "S",  "stock": true },
+      { "nombre": "M",  "stock": true },
+      { "nombre": "L",  "stock": true },
+      { "nombre": "XL", "stock": true }
+    ],
+    "detalles": [
+      { "label": "Material", "valor": "100% algodón"   },
+      { "label": "Origen",   "valor": "Hecho en México" },
+      { "label": "Cuidado",  "valor": "Lavado a 30°"   },
+      { "label": "Fit",      "valor": "Oversized"       }
+    ],
+    "stock": true
+  },
+  {
+    "id": "all",
+    "nombre": "all",
+    "categoria": "Superior",
+    "precio": "$580",
+    "precio_num": 580,
+    "imagen_home": "product-3.png",
+    "imagenes": ["product-3.png"],
+    "descripcion": "Camiseta de manga corta. Diseño Love. Algodón 100%, corte regular.",
+    "tallas": [
+      { "nombre": "S", "stock": true  },
+      { "nombre": "M", "stock": true  },
+      { "nombre": "L", "stock": true  },
+      { "nombre": "XL","stock": false }
+    ],
+    "detalles": [
+      { "label": "Material", "valor": "100% algodón" },
+      { "label": "Origen",   "valor": "Hecho en México" },
+      { "label": "Cuidado",  "valor": "Lavado a mano" },
+      { "label": "Fit",      "valor": "Regular" }
+    ],
+    "stock": true
+  },
+  {
+    "id": "untitled-4",
+    "nombre": "Untitled",
+    "categoria": "Superior",
+    "precio": "$580",
+    "precio_num": 580,
+    "imagen_home": "product-4.png",
+    "imagenes": ["product-4.png"],
+    "descripcion": "Camiseta con diseño de catedral. Serigrafía en tinta negra sobre algodón blanco.",
+    "tallas": [
+      { "nombre": "S",  "stock": true },
+      { "nombre": "M",  "stock": true },
+      { "nombre": "L",  "stock": true },
+      { "nombre": "XL", "stock": true }
+    ],
+    "detalles": [
+      { "label": "Material", "valor": "100% algodón" },
+      { "label": "Origen",   "valor": "Hecho en México" },
+      { "label": "Cuidado",  "valor": "Lavado a 30°, voltear al revés" },
+      { "label": "Fit",      "valor": "Regular" }
+    ],
+    "stock": true
+  },
+  {
+    "id": "oblivion",
+    "nombre": "oblivion",
+    "categoria": "Superior",
+    "precio": "$620",
+    "precio_num": 620,
+    "imagen_home": "product-5.png",
+    "imagenes": ["product-5.png"],
+    "descripcion": "Camiseta Happiness en blanco. Misma imagen, diferente base. Para combinar.",
+    "tallas": [
+      { "nombre": "S",  "stock": true },
+      { "nombre": "M",  "stock": true },
+      { "nombre": "L",  "stock": true },
+      { "nombre": "XL", "stock": true }
+    ],
+    "detalles": [
+      { "label": "Material", "valor": "100% algodón" },
+      { "label": "Origen",   "valor": "Hecho en México" },
+      { "label": "Cuidado",  "valor": "Lavado a 30°" },
+      { "label": "Fit",      "valor": "Oversized" }
+    ],
+    "stock": true
+  },
+  {
+    "id": "untitled-6",
+    "nombre": "Untitled",
+    "categoria": "Superior",
+    "precio": "$580",
+    "precio_num": 580,
+    "imagen_home": "product-6.png",
+    "imagenes": ["product-6.png"],
+    "descripcion": "Camiseta A New Star Born. Catedral gótica con texto azul. Edición limitada.",
+    "tallas": [
+      { "nombre": "S",  "stock": true  },
+      { "nombre": "M",  "stock": true  },
+      { "nombre": "L",  "stock": false },
+      { "nombre": "XL", "stock": false }
+    ],
+    "detalles": [
+      { "label": "Material", "valor": "100% algodón" },
+      { "label": "Origen",   "valor": "Hecho en México" },
+      { "label": "Cuidado",  "valor": "Lavado a 30°, voltear al revés" },
+      { "label": "Fit",      "valor": "Regular" }
+    ],
+    "stock": true
+  },
+  {
+    "id": "untitled-7",
+    "nombre": "Untitled",
+    "categoria": "Superior",
+    "precio": "$580",
+    "precio_num": 580,
+    "imagen_home": "product-7.png",
+    "imagenes": ["product-7.png"],
+    "descripcion": "Camiseta con ilustración. Algodón 100%, serigrafía de alta calidad.",
+    "tallas": [
+      { "nombre": "S",  "stock": true },
+      { "nombre": "M",  "stock": true },
+      { "nombre": "L",  "stock": true },
+      { "nombre": "XL", "stock": true }
+    ],
+    "detalles": [
+      { "label": "Material", "valor": "100% algodón" },
+      { "label": "Origen",   "valor": "Hecho en México" },
+      { "label": "Cuidado",  "valor": "Lavado a 30°" },
+      { "label": "Fit",      "valor": "Regular" }
+    ],
+    "stock": true
+  },
+  {
+    "id": "untitled-8",
+    "nombre": "Untitled",
+    "categoria": "Superior",
+    "precio": "$580",
+    "precio_num": 580,
+    "imagen_home": "product-8.png",
+    "imagenes": ["product-8.png"],
+    "descripcion": "Camiseta con ilustración. Algodón 100%, serigrafía de alta calidad.",
+    "tallas": [
+      { "nombre": "S",  "stock": true },
+      { "nombre": "M",  "stock": true },
+      { "nombre": "L",  "stock": true },
+      { "nombre": "XL", "stock": true }
+    ],
+    "detalles": [
+      { "label": "Material", "valor": "100% algodón" },
+      { "label": "Origen",   "valor": "Hecho en México" },
+      { "label": "Cuidado",  "valor": "Lavado a 30°" },
+      { "label": "Fit",      "valor": "Regular" }
+    ],
+    "stock": true
+  },
+  {
+    "id": "untitled-9",
+    "nombre": "Untitled",
+    "categoria": "Superior",
+    "precio": "$580",
+    "precio_num": 580,
+    "imagen_home": "product-9.png",
+    "imagenes": ["product-9.png"],
+    "descripcion": "Camiseta con ilustración. Algodón 100%, serigrafía de alta calidad.",
+    "tallas": [
+      { "nombre": "S",  "stock": true },
+      { "nombre": "M",  "stock": true },
+      { "nombre": "L",  "stock": true },
+      { "nombre": "XL", "stock": true }
+    ],
+    "detalles": [
+      { "label": "Material", "valor": "100% algodón" },
+      { "label": "Origen",   "valor": "Hecho en México" },
+      { "label": "Cuidado",  "valor": "Lavado a 30°" },
+      { "label": "Fit",      "valor": "Regular" }
+    ],
+    "stock": true
+  }
+]

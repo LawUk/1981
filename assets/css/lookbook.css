@@ -196,3 +196,9 @@
 .lookbook-hero .lookbook-hero-title {
   font-family: var(--fontFamily-clashDisplay) !important;
 }
+
+/* Las fotos del lookbook usan cover — son fotografías, no productos */
+.lookbook-img-container .img-cover,
+.lookbook-item-container img {
+  object-fit: cover;
+}
