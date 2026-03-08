@@ -1,0 +1,1068 @@
+/*-----------------------------------*\
+  #style.css 
+\*-----------------------------------*/
+
+/*-----------------------------------*\
+  #CUSTOM PROPERTY
+\*-----------------------------------*/
+
+:root {
+
+  /**
+   * COLORS - MODIFICADO CON PALETA DE INSPIRACIÓN
+   */
+
+  /* Colores de Fondo */
+  --bg-white: hsla(0, 0%, 100%, 1);
+  --bg-light-sand: hsla(38, 40%, 95%, 1); /* <-- Arena clara (de la foto) */
+  --bg-stone-gray: hsla(210, 5%, 80%, 1); /* <-- Cielo nublado (de la foto) */
+  --bg-deep-sea: hsla(210, 25%, 35%, 1); /* <-- NUEVO: Azul mar desaturado (para el hero) */
+  --bg-sky-blue: hsla(190, 20%, 55%, 1); /* <-- NUEVO: Verde-azulado mar (para botones) */
+  --bg-accent-gold: hsla(35, 30%, 70%, 1); /* <-- NUEVO: Arena mojada (para hover) */
+  --bg-roman-silver-alpha-30: hsla(210, 9%, 57%, 0.3);
+
+  /* Colores de Texto */
+  --text-deep-sea: hsla(210, 30%, 20%, 1); /* <-- NUEVO: Azul muy oscuro desaturado */
+  --text-sky-blue: hsla(190, 20%, 55%, 1); /* <-- NUEVO: (Igual al botón) */
+  --text-dark-stone: hsla(210, 11%, 15%, 1);
+  --text-black: hsla(270, 100%, 0%, 1);
+
+  /* Colores de Borde */
+  --border-dark-stone: hsla(210, 11%, 15%, 1);
+  --border-deep-sea: hsla(210, 25%, 35%, 1); /* <-- NUEVO: (Igual al hero) */
+
+
+  /**
+   * TYPOGRAPHY
+   */
+
+  --fontFamily-inter: 'Inter', sans-serif;
+  --fontFamily-clashDisplay: 'ClashDisplay', cursive;
+
+  --fontSize-1: 6.2rem;
+  --fontSize-2: 4.4rem;
+  --fontSize-3: 3.8rem;
+  --fontSize-4: 3.4rem;
+  --fontSize-5: 3rem;
+  --fontSize-6: 2.5rem;
+  --fontSize-7: 2rem;
+  --fontSize-8: 1.8rem;
+  --fontSize-9: 1.4rem;
+  --fontSize-10: 2.4rem;
+  --fontSize-11: 1.2rem;
+  --weight-semiBold: 600;
+
+  /**
+   * BOX SHADOW
+   */
+
+  --shadow-1: 0 4px 6px hsla(210, 11%, 15%, 0.1);
+  --shadow-2: 4px 4px 0px var(--border-dark-stone);
+  --shadow-3: 2px 2px 0px var(--border-dark-stone);
+
+  /**
+   * BORDER RADIUS
+   */
+
+  --radius-circle: 50%;
+  --radius-block: 8px;
+
+  /**
+   * TRANSITION
+   */
+
+  --transition-1: 250ms ease;
+  --transition-2: 400ms ease;
+
+}
+
+
+/*-----------------------------------*\
+  #RESET
+\*-----------------------------------*/
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a,
+img,
+span,
+input,
+button,
+ion-icon {
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  height: auto;
+}
+
+input,
+button {
+  background: none;
+  border: none;
+  font: inherit;
+}
+
+input {
+  width: 100%;
+}
+
+button {
+  cursor: pointer;
+}
+
+address {
+  font-style: normal;
+}
+
+ion-icon {
+  pointer-events: none;
+}
+
+html {
+  font-family: var(--fontFamily-inter);
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-light-sand);
+  color: var(--text-dark-stone);
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+
+/*-----------------------------------*\
+  #REUSED STYLE
+\*-----------------------------------*/
+
+.container {
+  padding-inline: 16px;
+}
+
+.shape {
+  display: none;
+  position: absolute;
+}
+
+.title {
+  font-family: var(--fontFamily-clashDisplay);
+  font-weight: var(--weight-semiBold);
+  line-height: 1.2;
+}
+
+.h1 {
+  font-size: var(--fontSize-2);
+}
+
+.h2 {
+  font-size: var(--fontSize-3);
+}
+
+.h3 {
+  font-size: var(--fontSize-5);
+}
+
+.h4 {
+  font-size: var(--fontSize-6);
+}
+
+.btn {
+  background-color: var(--bg-sky-blue);
+  border: 2px solid var(--border-deep-sea);
+  box-shadow: var(--shadow-2);
+  border-radius: var(--radius-block);
+  display: flex;
+  align-items: center;
+  max-width: max-content;
+  min-width: max-content;
+  padding: 15px 30px;
+  font-weight: var(--weight-semiBold);
+  transition: var(--transition-1);
+  color: var(--text-deep-sea); /* Texto oscuro para contraste en botón azul claro */
+}
+
+.btn:is(:hover, :focus-visible) {
+  box-shadow: none;
+  background-color: var(--bg-accent-gold);
+  color: var(--text-deep-sea);
+  border-color: var(--text-deep-sea);
+}
+
+.btn-primary,
+.btn-secondary {
+  gap: 5px;
+  text-transform: uppercase;
+}
+
+:is(.btn-primary, .btn-secondary) ion-icon {
+  font-size: 2rem;
+  transform: rotate(-45deg);
+}
+
+.btn-primary:is(:hover, :focus-visible) {
+  color: var(--text-deep-sea);
+}
+
+.btn-secondary {
+  background-color: var(--bg-deep-sea);
+  color: var(--bg-light-sand);
+}
+.btn-secondary:is(:hover, :focus-visible) {
+  background-color: var(--bg-accent-gold);
+  color: var(--text-deep-sea);
+}
+
+
+.img-holder {
+  background-color: var(--bg-stone-gray);
+  overflow: hidden;
+}
+
+.img-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* <-- MODIFICADO: De 'contain' a 'cover' para igualar tamaños */
+}
+
+.section {
+  padding-block: 75px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-title {
+  margin-block-end: 45px;
+}
+
+.product-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: var(--fontSize-9);
+  gap: 8px;
+  opacity: 0;
+  
+  background-color: var(--bg-deep-sea);
+  color: var(--bg-light-sand);
+  border: 2px solid var(--border-dark-stone);
+  border-radius: var(--radius-block);
+  padding: 15px 30px;
+  font-weight: var(--weight-semiBold);
+  transition: var(--transition-1);
+}
+
+.product-btn ion-icon {
+  font-size: 1.4rem;
+}
+
+.product-card:is(:hover, :focus-within) .product-btn {
+  opacity: 1;
+}
+
+.product-btn:is(:hover, :focus-visible) {
+  background-color: var(--bg-accent-gold);
+  color: var(--text-deep-sea);
+  box-shadow: none;
+}
+
+.product-card .card-banner {
+  position: relative;
+}
+
+/* --- MEJORA v9: Forzar ratio cuadrado en tarjetas de producto --- */
+.product-card .product-banner.img-holder {
+  aspect-ratio: 1 / 1;
+  border-radius: 12px; /* <-- AÑADIDO: Redondear productos */
+}
+
+.product-card .card-content {
+  margin-block-start: 30px;
+}
+
+.product-card .card-title:is(:hover, :focus-visible) {
+  text-decoration: underline;
+}
+
+.product-card .price {
+  color: var(--text-deep-sea);
+  font-family: var(--fontFamily-clashDisplay);
+  font-size: var(--fontSize-7);
+  font-weight: var(--weight-semiBold);
+  margin-block-start: 10px;
+}
+
+.has-scrollbar {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  scroll-snap-type: inline mandatory;
+  overflow-x: auto;
+}
+
+.has-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-item {
+  min-width: 100%;
+  scroll-snap-align: start;
+}
+
+.has-bg-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+
+/*-----------------------------------*\
+  #HEADER
+\*-----------------------------------*/
+
+.navbar .btn {
+  margin: 15px auto; /* <-- 15px arriba/abajo, 'auto' a izq/der */
+  padding: 10px 25px;
+  justify-content: center; /* <-- Centra el texto DENTRO */
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-block: 25px;
+  z-index: 4;
+}
+
+/* MODIFICADO: Se añade .header.nav-active para que el fondo cambie al abrir el menu */
+.header.active,
+.header.nav-active {
+  background-color: var(--bg-light-sand);
+  box-shadow: 0 2px 4px hsla(0, 0%, 0%, 0.05);
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-open-btn {
+  font-size: 3.5rem;
+}
+
+.navbar {
+  position: absolute;
+  top: 85px;
+  left: 0;
+  right: 0;
+  background-color: var(--bg-light-sand);
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: transform var(--transition-2), opacity var(--transition-2), visibility var(--transition-2);
+}
+
+.navbar.active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.navbar-list {
+  padding-block-start: 15px;
+}
+
+.navbar-link,
+.cart-btn .span {
+  font-weight: var(--weight-semiBold);
+  text-transform: uppercase;
+}
+
+.navbar-link {
+  padding: 10px 20px;
+}
+
+.cart-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 25px 20px;
+}
+
+
+/* --- MEJORA v6: REGLAS EXPLÍCITAS PARA EL HEADER --- */
+
+/* 1. Estado por defecto (fondo azul) */
+.header {
+  color: var(--bg-light-sand); /* Color de texto para links */
+}
+.header .logo img {
+  filter: brightness(0) invert(1); /* Logo se vuelve blanco */
+  transition: filter var(--transition-1);
+}
+.cart-btn .span,
+.cart-btn ion-icon {
+  color: var(--bg-light-sand); /* Texto e icono de carrito se vuelven blancos */
+  transition: color var(--transition-1);
+}
+
+/* 2. Estado Activo/Scroll (fondo claro) */
+/* MODIFICADO: Se añade .header.nav-active */
+.header.active,
+.header.nav-active {
+  color: var(--text-dark-stone); /* Color de texto para links */
+}
+.header.active .logo img,
+.header.nav-active .logo img {
+  filter: none; /* Logo vuelve a ser negro */
+}
+.header.active .cart-btn .span,
+.header.active .cart-btn ion-icon,
+.header.nav-active .cart-btn .span,
+.header.nav-active .cart-btn ion-icon {
+  color: var(--text-dark-stone); /* Texto e icono de carrito se vuelven oscuros */
+}
+
+/* 3. Estado Hover (Transparente + Dorado) */
+.navbar-link:is(:hover, :focus-visible) {
+  background-color: transparent;
+  color: var(--bg-accent-gold); /* Links se vuelven dorados */
+}
+.cart-btn:is(:hover, :focus-visible) {
+  background-color: transparent;
+}
+.cart-btn:is(:hover, :focus-visible) .span,
+.cart-btn:is(:hover, :focus-visible) ion-icon {
+  color: var(--bg-accent-gold); /* Carrito (texto e icono) se vuelve dorado */
+}
+/* Fin de las reglas del header */
+
+
+/*-----------------------------------*\
+  #HERO
+\*-----------------------------------*/
+
+.hero {
+  background-color: var(--bg-deep-sea);
+  color: var(--bg-light-sand);
+  padding-block: 130px 75px;
+  overflow: hidden; /* <-- AÑADIDO: Ocultar estrella desbordada */
+}
+
+.hero .container {
+  display: grid;
+  gap: 50px;
+}
+
+.hero-subtitle {
+  font-size: var(--fontSize-4);
+  color: var(--bg-light-sand); /* Arreglo de contraste */
+}
+
+.hero-title {
+  margin-block: 16px 30px;
+}
+
+.hero-text {
+  font-size: var(--fontSize-8);
+  line-height: 2.1;
+  margin-block-end: 16px;
+  color: var(--bg-light-sand);
+}
+
+.hero-banner {
+  max-width: max-content;
+  margin-inline: auto;
+}
+
+/* --- NUEVO: Redondear imagen de inicio --- */
+.hero-banner .img-holder {
+  border-radius: 20px;
+}
+
+
+/*-----------------------------------*\
+  #FEATURE
+\*-----------------------------------*/
+
+.section.feature {
+  padding-block-start: 0;
+}
+
+.feature-list {
+  display: grid;
+  gap: 60px;
+  margin-block-end: 60px;
+}
+
+.feature .btn {
+  margin-inline: auto;
+}
+
+
+/*-----------------------------------*\
+  #OFFER
+\*-----------------------------------*/
+
+.offer {
+  padding-block: 100px;
+  /* Si quieres usar la foto de la playa aquí, descomenta la línea de abajo */
+  /* background-image: url('../images/offer-bg.jpg'); */
+}
+
+.offer-card {
+  background-color: var(--bg-white);
+  border: 2px solid var(--border-dark-stone);
+  box-shadow: var(--shadow-2);
+  padding: 80px 30px;
+  border-radius: var(--radius-block);
+}
+
+.offer-card .card-title {
+  font-size: var(--fontSize-1);
+  color: var(--text-deep-sea);
+}
+
+.offer-card .card-text {
+  font-size: var(--fontSize-8);
+  line-height: 1.8;
+  margin-block: 20px 45px;
+  color: var(--text-dark-stone);
+}
+
+
+/*-----------------------------------*\
+  #FOOTER
+\*-----------------------------------*/
+
+.footer {
+  position: relative;
+  background-color: var(--bg-light-sand);
+  padding-block-start: 160px;
+  color: var(--text-dark-stone);
+}
+
+.footer-top {
+  display: grid;
+  gap: 30px;
+  font-size: var(--fontSize-8);
+  line-height: 1.7;
+  margin-block-end: 60px;
+}
+
+.footer .logo {
+  margin-block-end: 35px;
+}
+
+.social-list {
+  display: flex;
+  gap: 10px;
+  margin-block-start: 30px;
+}
+
+.social-link {
+  background-color: var(--bg-sky-blue);
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-circle);
+  border: 2px solid var(--border-deep-sea);
+  box-shadow: var(--shadow-3);
+  transition: var(--transition-1);
+  color: var(--bg-light-sand);
+}
+
+.social-link:is(:hover, :focus-visible) {
+  box-shadow: none;
+  color: var(--bg-accent-gold);
+  transform: translateY(-2px);
+  border-color: var(--text-deep-sea);
+}
+
+.footer-list-title {
+  font-size: var(--fontSize-10);
+  margin-block-end: 30px;
+}
+
+address.footer-text {
+  margin-block-end: 15px;
+}
+
+.input-field {
+  background-color: var(--bg-white);
+  box-shadow: var(--shadow-2);
+  padding: 15px 30px;
+  border: 2px solid var(--border-dark-stone);
+  margin-block-end: 25px;
+  transition: var(--transition-1);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  border-radius: var(--radius-block);
+  color: var(--text-dark-stone);
+}
+
+.input-field:focus-visible {
+  box-shadow: none;
+  outline-color: var(--bg-accent-gold);
+}
+.input-field:focus {
+  box-shadow: none;
+}
+
+.footer .btn {
+  font-size: 1.6rem;
+  padding-inline: 40px;
+}
+
+.footer-bottom .wrapper {
+  border-block-end: 2px solid var(--border-dark-stone);
+  padding-block-end: 15px;
+}
+
+.link-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 30px;
+  margin-block-end: 15px;
+}
+
+.footer-bottom-link {
+  font-size: var(--fontSize-11);
+  font-weight: var(--weight-semiBold);
+  text-transform: uppercase;
+  transition: var(--transition-1);
+  color: var(--text-deep-sea);
+}
+
+.footer-bottom-link:is(:hover, :focus-visible) {
+  color: var(--bg-accent-gold);
+}
+
+.copyright {
+  padding-block: 30px;
+  font-size: var(--fontSize-8);
+  text-align: center;
+}
+
+.footer .shape-1 {
+  display: block;
+  top: 0;
+  right: 0;
+}
+
+
+/*-----------------------------------*\
+  #MEDIA QUERIES
+\*-----------------------------------*/
+
+/* --- NUEVO: Arreglar color de links en menú móvil --- */
+@media (max-width: 991px) {
+
+  .navbar.active .navbar-link,
+  .navbar.active .cart-btn .span,
+  .navbar.active .cart-btn ion-icon {
+    color: var(--text-dark-stone);
+  }
+
+  .navbar.active .navbar-link:is(:hover, :focus-visible) {
+    color: var(--bg-accent-gold); /* Mantiene el color hover dorado */
+  }
+
+  #lookbook-title {
+    font-size: 3.2rem; /* Un poco más pequeño que el 3.8rem original */
+    line-height: 1.1;  /* Ayuda a que no se vea tan alto */
+  }
+
+}
+
+/**
+  * responsive for large than 575px screen
+  */
+
+@media (min-width: 575px) {
+
+  .container {
+    max-width: 540px;
+    width: 100%;
+    margin-inline: auto;
+  }
+
+  .offer-card {
+    padding-inline: 50px;
+  }
+
+}
+
+
+
+/**
+  * responsive for large than 768px screen
+  */
+
+@media (min-width: 768px) {
+
+  :root {
+    --fontSize-4: 4.2rem;
+    --fontSize-2: 7.8rem;
+    --fontSize-3: 6.6rem;
+  }
+
+  .container {
+    max-width: 720px;
+  }
+
+  .btn {
+    padding: 20px 50px;
+  }
+
+  .section {
+    padding-block: 135px;
+  }
+
+  .scrollbar-item {
+    min-width: calc(50% - 20px);
+  }
+
+  .product-btn {
+    padding: 15px 30px;
+  }
+
+  .hero {
+    padding-block: 200px 130px;
+  }
+
+  .hero-text {
+    --fontSize-8: 2.2rem;
+    line-height: 1.8;
+  }
+
+  .hero .btn {
+    margin-block-start: 50px;
+  }
+
+  .feature-list {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 24px;
+  }
+
+  .offer-card {
+    padding-inline: 90px;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+  }
+
+}
+
+
+
+/**
+  * responsive for large than 992px screen
+  */
+
+@media (min-width: 992px) {
+
+  .container {
+    max-width: 960px;
+  }
+
+  .header {
+    padding-block: 0;
+  }
+
+  .header .container {
+    /* La línea del borde negro fue eliminada de aquí */
+  }
+
+  /* MODIFICADO: Se añade .header.nav-active */
+  .header.active .container,
+  .header.nav-active .container {
+    border-color: transparent;
+  }
+
+  .nav-open-btn {
+    display: none;
+  }
+
+  .navbar,
+  .navbar.active {
+    position: static;
+    max-height: none;
+    overflow: visible;
+    visibility: visible;
+    background-color: transparent;
+    transform: none;
+    opacity: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .navbar-list {
+    padding-block-start: 0;
+    display: flex;
+  }
+
+  .cart-btn {
+    /* MODIFICADO: Esta regla ahora está vacía o se puede borrar, */
+    /* pero la dejamos por si se vuelve a añadir el botón */
+    border-inline-start: 2px solid var(--border-dark-stone);
+    padding-inline-start: 50px;
+    margin-inline-start: 20px;
+  }
+  
+  /* MODIFICADO: Se añade .header.nav-active */
+  .header.active .cart-btn,
+  .header.nav-active .cart-btn {
+    border-color: var(--border-dark-stone);
+  }
+
+  .footer .shape-2 {
+    display: block;
+    bottom: 100px;
+    left: 0;
+  }
+
+}
+
+
+/**
+  * responsive for large than 1200px screen
+  */
+
+@media (min-width: 1200px) {
+
+  .container {
+    max-width: 1140px;
+  }
+
+  .scrollbar-item {
+    min-width: calc(33.33% - 40px);
+  }
+
+  .shape {
+    display: block;
+  }
+
+  .cart-btn {
+    padding-block: 35px; /* Esta regla ya no aplica a nada visible */
+  }
+
+  /* MODIFICADO: Se añade padding vertical a los links */
+  .navbar-link {
+    padding-block: 32.5px;
+  }
+
+  .navbar .btn {
+    display: block;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    margin-inline-start: 40px;
+  }
+
+  .hero {
+    position: relative;
+  }
+
+  .hero .container {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+
+  .hero-banner {
+    position: relative;
+    z-index: 1; /* <-- Importante para la estrella */
+  }
+
+  .hero .shape-1 {
+    top: -45px;
+    left: -45px;
+    z-index: 0;
+  }
+
+  .hero .shape-2 {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .feature-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .offer {
+    padding-block: 200px;
+  }
+
+  .offer-card {
+    width: 40%;
+  }
+
+  .footer-top {
+    grid-template-columns: repeat(3, 1fr);
+    margin-block-end: 160px;
+  }
+
+  .footer-bottom .wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .footer .shape-2 {
+    bottom: 160px;
+  }
+
+  .footer .shape-3 {
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+
+  .copyright {
+    text-align: left;
+    padding-block-end: 50px;
+  }
+
+}
+
+
+/**
+  * responsive for large than 1400px screen
+  */
+
+@media (min-width: 1400px) {
+
+  :root {
+    --fontSize-2: 9rem;
+  }
+
+  .container {
+    max-width: 1320px;
+  }
+
+  .footer-bottom-link {
+    font-size: 1.6rem;
+  }
+
+}
+
+/*-----------------------------------*\
+  # LOOKBOOK (MODIFICADO)
+\*-----------------------------------*/
+
+.lookbook-grid {
+  /* 2 columnas en móvil/tablet */
+  column-count: 2;
+  column-gap: 20px;
+}
+
+/* El <li> ahora es solo un contenedor de flujo */
+.lookbook-grid li {
+  margin-block-end: 20px; 
+}
+
+/* NUEVO: Contenedor para la imagen y el botón */
+.lookbook-item-container {
+  position: relative; /* Para posicionar el botón */
+  break-inside: avoid; /* Evita que se parta la imagen */
+  overflow: hidden; /* Para el border-radius */
+  border-radius: 12px; /* Mueve el radius aquí */
+  display: block; /* Asegura el comportamiento de bloque */
+}
+
+.lookbook-item-container img {
+  width: 100%; 
+  height: auto; 
+  display: block; /* Quita espacio extra de la imagen */
+  transition: var(--transition-1);
+}
+
+/* NUEVO: Botón de descarga */
+.download-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0; /* Oculto por defecto */
+  transition: var(--transition-1);
+  z-index: 2;
+  gap: 8px; /* Espacio entre icono y texto */
+  
+  /* Ajustes para que se vea bien el botón de tu CSS */
+  padding: 10px 20px;
+  font-size: var(--fontSize-9);
+}
+
+.download-btn ion-icon {
+  font-size: 1.8rem;
+}
+
+/* Efecto al pasar el mouse */
+.lookbook-item-container:is(:hover, :focus-within) img {
+  filter: brightness(0.6); /* Oscurece la imagen */
+}
+
+.lookbook-item-container:is(:hover, :focus-within) .download-btn {
+  opacity: 1; /* Muestra el botón */
+}
+
+
+/* En pantallas grandes, pasamos a 3 columnas */
+@media (min-width: 992px) {
+  .lookbook-grid {
+    column-count: 3;
+    column-gap: 30px;
+  }
+  
+  .lookbook-grid li {
+    margin-block-end: 30px; 
+  }
+}
+
+/* --- Aplicar la fuente al título del Lookbook --- */
+#lookbook-title {
+  font-family: 'LookbookFont', var(--fontFamily-clashDisplay), cursive;
+}
+
+/* --- NUEVO: Arreglar espacio superior en Lookbook --- */
+.lookbook-main-section {
+  /* El header en móvil mide 85px.
+    El padding de 75px de .section no es suficiente.
+    Usamos 130px (igual que el hero de index.html) 
+    para darle espacio.
+  */
+  padding-block-start: 130px;
+}
+
+/* En escritorio (768px+), .section ya tiene 150px,
+  así que lo mantenemos.
+*/
+@media (min-width: 768px) {
+  .lookbook-main-section {
+    padding-block-start: 150px;
+  }
+}

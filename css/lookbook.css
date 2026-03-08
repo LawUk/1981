@@ -1,0 +1,162 @@
+/*-----------------------------------*\
+  #lookbook.css
+  Estilos específicos para lookbook.html
+\*-----------------------------------*/
+
+
+/*-----------------------------------*\
+  #LOOKBOOK HERO
+\*-----------------------------------*/
+
+.lookbook-hero {
+  background-color: var(--bg-deep-sea);
+  color: var(--bg-light-sand);
+  padding-block: 160px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* "Vol. 1" decorativo grande al fondo */
+.lookbook-hero::after {
+  content: "Vol.1";
+  font-family: var(--fontFamily-clashDisplay);
+  font-size: 22rem;
+  color: hsla(190, 20%, 70%, 0.08);
+  position: absolute;
+  right: -1rem;
+  bottom: -2rem;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.lookbook-hero-label {
+  font-size: var(--fontSize-11);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--bg-accent-gold);
+  margin-block-end: 12px;
+}
+
+.lookbook-hero-title {
+  font-size: var(--fontSize-2);
+  line-height: 1;
+  color: var(--bg-light-sand);
+  margin-block-end: 20px;
+}
+
+.lookbook-hero-text {
+  font-size: var(--fontSize-8);
+  line-height: 1.9;
+  color: var(--bg-stone-gray);
+}
+
+@media (min-width: 768px) {
+  .lookbook-hero-title {
+    font-size: 9rem;
+  }
+}
+
+
+/*-----------------------------------*\
+  #LOOKBOOK HEADER (contador + hint)
+\*-----------------------------------*/
+
+.lookbook-main-section {
+  padding-block-start: 75px;
+}
+
+.lookbook-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-block-end: 40px;
+}
+
+.lookbook-count {
+  font-size: var(--fontSize-7);
+  color: var(--text-deep-sea);
+  opacity: 0.5;
+}
+
+.lookbook-hint {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fontSize-11);
+  color: var(--text-deep-sea);
+  opacity: 0.5;
+}
+
+.lookbook-hint ion-icon {
+  font-size: 1.4rem;
+}
+
+/* Ocultar hint en móvil (no hay hover) */
+@media (max-width: 767px) {
+  .lookbook-hint {
+    display: none;
+  }
+}
+
+
+/*-----------------------------------*\
+  #SKELETONS de carga
+\*-----------------------------------*/
+
+.lookbook-skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-stone-gray) 25%,
+    hsla(210, 5%, 88%, 1) 50%,
+    var(--bg-stone-gray) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+  border-radius: 12px;
+  aspect-ratio: 3 / 4;
+  margin-block-end: 20px;
+  break-inside: avoid;
+}
+
+@keyframes skeleton-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+
+/*-----------------------------------*\
+  #SECCIÓN BLOG EN LOOKBOOK
+\*-----------------------------------*/
+
+.lookbook-blog-section {
+  background-color: var(--bg-white);
+  border-block-start: 2px solid var(--border-dark-stone);
+}
+
+.lookbook-blog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-block-end: 50px;
+}
+
+.lookbook-blog-header .h2 {
+  margin: 0;
+}
+
+/* El .blog-grid y .blog-card ya están definidos en blog.css */
+
+
+/*-----------------------------------*\
+  #ACTIVE LINK — Lookbook en navbar
+\*-----------------------------------*/
+
+.header.active .active-link {
+  color: var(--bg-accent-gold);
+}

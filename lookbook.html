@@ -7,7 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Lookbook - 1981.</title>
-  <meta name="description" content="Nuestro lookbook oficial.">
+  <meta name="description" content="Lookbook Vol. 1 de 1981. — Moda ecológica, Y2K y underground.">
+  <meta property="og:title" content="Lookbook — 1981.">
+  <meta property="og:description" content="Fotos reales, personas reales. El lookbook oficial de 1981.">
+  <meta property="og:type" content="website">
 
   <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
 
@@ -17,6 +20,8 @@
   <link rel="stylesheet" href="./assets/fonts/font.css">
 
   <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/blog.css">
+  <link rel="stylesheet" href="./assets/css/lookbook.css">
 
 </head>
 
@@ -33,7 +38,7 @@
         <ul class="navbar-list">
 
           <li>
-            <a href="./lookbook.html" class="navbar-link">Lookbook</a> 
+            <a href="./lookbook.html" class="navbar-link active-link">Lookbook</a>
           </li>
 
           <li>
@@ -41,7 +46,6 @@
           </li>
 
         </ul>
-
         <a href="#" class="btn">Contáctanos</a>
       </nav>
 
@@ -55,15 +59,56 @@
 
   <main>
 
-  <section class="section lookbook-main-section" aria-labelledby="lookbook-title">
-    <div class="container">
+    <!-- HERO DEL LOOKBOOK -->
+    <section class="lookbook-hero">
+      <div class="container">
+        <p class="lookbook-hero-label title">Vol. 1 — 2025</p>
+        <h1 class="h1 title lookbook-hero-title" id="lookbook-title">Lookbook.</h1>
+        <p class="lookbook-hero-text">
+          Fotos reales. Personas reales.<br>
+          Ropa hecha para durar.
+        </p>
+      </div>
+    </section>
 
-        <h2 class="h2 section-title title text-center" id="lookbook-title">
-          Lookbook
-        </h2>
 
-        <ul class="lookbook-grid">
-          </ul>
+    <!-- GALERÍA -->
+    <section class="section lookbook-main-section" aria-label="Galería del lookbook">
+      <div class="container">
+
+        <div class="lookbook-header">
+          <p class="lookbook-count title" id="lookbook-count">— fotos</p>
+          <p class="lookbook-hint">
+            <ion-icon name="download-outline" aria-hidden="true"></ion-icon>
+            Pasa el cursor sobre una foto para guardarla
+          </p>
+        </div>
+
+        <ul class="lookbook-grid" id="lookbook-grid">
+          <li class="lookbook-skeleton"></li>
+          <li class="lookbook-skeleton"></li>
+          <li class="lookbook-skeleton"></li>
+        </ul>
+
+      </div>
+    </section>
+
+
+    <!-- SECCIÓN: ENTRADAS DEL BLOG -->
+    <section class="section lookbook-blog-section" aria-label="Del blog">
+      <div class="container">
+
+        <div class="lookbook-blog-header">
+          <h2 class="h2 title">Del blog.</h2>
+          <a href="./blog.html" class="btn btn-secondary">
+            <span class="span">Ver todo</span>
+            <ion-icon name="arrow-forward" aria-hidden="true"></ion-icon>
+          </a>
+        </div>
+
+        <div class="blog-grid" id="lookbook-blog-grid">
+          <!-- Se carga desde blog.json vía JS -->
+        </div>
 
       </div>
     </section>
@@ -77,7 +122,7 @@
       <div class="footer-top">
 
         <div class="footer-brand">
-          <a href="#" class="logo">
+          <a href="./index.html" class="logo">
             <img src="./assets/images/logo.svg" width="132" height="27" loading="lazy" alt="1981 home">
           </a>
           <p class="footer-text">
@@ -88,14 +133,12 @@
         <div class="footer-list">
           <p class="footer-list-title title">Contacto</p>
           <a href="mailto:1981@support.com" class="email">1981@support.com</a>
-          </div>
+        </div>
 
         <div class="footer-list">
           <p class="footer-list-title title">Suscribete para recibir noticias</p>
-
           <input type="email" name="email_address" placeholder="Coloca tu correo electrónico" required
             autocomplete="email" class="input-field">
-
           <button class="btn btn-secondary">Suscribir</button>
         </div>
 
@@ -107,7 +150,7 @@
           <div class="link-wrapper">
             <a href="#" class="footer-bottom-link">Nuestro equipo</a>
             <a href="#" class="footer-bottom-link">Plan de precio</a>
-            <a href="#" class="footer-bottom-link">Medidas</a>
+            <a href="./medidas.html" class="footer-bottom-link">Medidas</a>
           </div>
 
           <div class="link-wrapper">
@@ -141,4 +184,3 @@
 </body>
 
 </html>
-

@@ -1,0 +1,312 @@
+/*-----------------------------------*\
+  #blog.css
+  Estilos para la página de Blog de 1981.
+  Hereda todas las variables y resets de style.css
+\*-----------------------------------*/
+
+
+/*-----------------------------------*\
+  #BLOG HERO
+\*-----------------------------------*/
+
+.blog-hero {
+  background-color: var(--bg-deep-sea);
+  color: var(--bg-light-sand);
+  padding-block: 160px 80px;
+  overflow: hidden;
+  position: relative;
+}
+
+.blog-hero::after {
+  content: "✦";
+  font-family: var(--fontFamily-clashDisplay);
+  font-size: 28rem;
+  color: hsla(210, 25%, 55%, 0.12);
+  position: absolute;
+  right: -2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.blog-hero-title {
+  font-size: var(--fontSize-1);
+  line-height: 1;
+  margin-block: 12px 24px;
+  color: var(--bg-light-sand);
+}
+
+.blog-hero .hero-subtitle {
+  font-size: var(--fontSize-9);
+  color: var(--bg-accent-gold);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.blog-hero-text {
+  font-size: var(--fontSize-8);
+  line-height: 1.8;
+  color: var(--bg-stone-gray);
+  max-width: 42ch;
+}
+
+@media (min-width: 768px) {
+  .blog-hero-title {
+    font-size: 9rem;
+  }
+}
+
+
+/*-----------------------------------*\
+  #ARTÍCULO DESTACADO
+\*-----------------------------------*/
+
+.blog-featured {
+  padding-block-end: 0;
+}
+
+.featured-card {
+  border: 2px solid var(--border-dark-stone);
+  box-shadow: var(--shadow-2);
+  border-radius: var(--radius-block);
+  background-color: var(--bg-white);
+  padding: 40px 30px;
+  position: relative;
+}
+
+.featured-card-label {
+  display: inline-block;
+  font-size: var(--fontSize-11);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--bg-sky-blue);
+  border: 1.5px solid var(--bg-sky-blue);
+  border-radius: 100px;
+  padding: 4px 14px;
+  margin-block-end: 24px;
+}
+
+.featured-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-block-end: 16px;
+}
+
+.blog-tag {
+  font-size: var(--fontSize-11);
+  font-family: var(--fontFamily-clashDisplay);
+  font-weight: var(--weight-semiBold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background-color: var(--bg-deep-sea);
+  color: var(--bg-light-sand);
+  padding: 3px 10px;
+  border-radius: 4px;
+}
+
+.blog-date {
+  font-size: var(--fontSize-11);
+  color: var(--text-deep-sea);
+  opacity: 0.6;
+  font-weight: 500;
+}
+
+.featured-card-title {
+  margin-block-end: 20px;
+  color: var(--text-dark-stone);
+}
+
+.featured-card-text {
+  font-size: var(--fontSize-8);
+  line-height: 1.9;
+  color: var(--text-dark-stone);
+  max-width: 65ch;
+  margin-block-end: 35px;
+}
+
+.featured-card-text em {
+  font-style: italic;
+  color: var(--text-deep-sea);
+}
+
+@media (min-width: 768px) {
+  .featured-card {
+    padding: 60px 50px;
+  }
+}
+
+
+/*-----------------------------------*\
+  #BLOG GRID
+\*-----------------------------------*/
+
+.blog-grid-section .section-title {
+  margin-block-end: 50px;
+}
+
+.blog-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 575px) {
+  .blog-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .blog-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/*-----------------------------------*\
+  #BLOG CARD
+\*-----------------------------------*/
+
+.blog-card {
+  background-color: var(--bg-white);
+  border: 2px solid var(--border-dark-stone);
+  box-shadow: var(--shadow-2);
+  border-radius: var(--radius-block);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: box-shadow var(--transition-1), transform var(--transition-1);
+}
+
+.blog-card:is(:hover, :focus-within) {
+  box-shadow: none;
+  transform: translate(2px, 2px);
+}
+
+.blog-card-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.blog-card-title {
+  font-size: var(--fontSize-7);
+  line-height: 1.3;
+  color: var(--text-dark-stone);
+}
+
+.blog-card-text {
+  font-size: var(--fontSize-9);
+  line-height: 1.8;
+  color: var(--text-dark-stone);
+  opacity: 0.8;
+  flex: 1;
+}
+
+.blog-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-block-start: auto;
+  padding-block-start: 14px;
+  border-block-start: 1.5px solid hsla(210, 11%, 15%, 0.12);
+}
+
+.blog-read-time {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: var(--fontSize-11);
+  font-weight: 500;
+  color: var(--text-deep-sea);
+  opacity: 0.6;
+}
+
+.blog-read-time ion-icon {
+  font-size: 1.4rem;
+}
+
+.blog-card-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: var(--fontSize-11);
+  font-family: var(--fontFamily-clashDisplay);
+  font-weight: var(--weight-semiBold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-deep-sea);
+  transition: color var(--transition-1), gap var(--transition-1);
+}
+
+.blog-card-link ion-icon {
+  font-size: 1.4rem;
+  transition: transform var(--transition-1);
+}
+
+.blog-card-link:is(:hover, :focus-visible) {
+  color: var(--bg-sky-blue);
+  gap: 8px;
+}
+
+.blog-card-link:is(:hover, :focus-visible) ion-icon {
+  transform: translateX(3px);
+}
+
+
+/*-----------------------------------*\
+  #BLOG CARD CTA (tarjeta de contacto)
+\*-----------------------------------*/
+
+.blog-card-cta {
+  background-color: var(--bg-deep-sea);
+  color: var(--bg-light-sand);
+  border-color: var(--border-deep-sea);
+  justify-content: center;
+}
+
+.blog-card-cta:is(:hover, :focus-within) {
+  transform: translate(2px, 2px);
+}
+
+.blog-card-cta-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.blog-card-cta-label {
+  font-size: var(--fontSize-11);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--bg-accent-gold);
+}
+
+.blog-card-cta .h3 {
+  color: var(--bg-light-sand);
+  font-size: var(--fontSize-5);
+}
+
+.blog-card-cta p {
+  font-size: var(--fontSize-9);
+  line-height: 1.8;
+  opacity: 0.75;
+}
+
+.blog-card-cta .btn {
+  margin-block-start: 8px;
+}
+
+
+/*-----------------------------------*\
+  #LINK ACTIVO EN NAVBAR
+\*-----------------------------------*/
+
+/* Resalta el link "Blog" cuando estás en esa página */
+.header.active .active-link {
+  color: var(--bg-accent-gold);
+}

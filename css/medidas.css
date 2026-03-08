@@ -1,0 +1,274 @@
+/*-----------------------------------*\
+  #medidas.css
+  Estilos para la página de Guía de Medidas de 1981.
+\*-----------------------------------*/
+
+
+/*-----------------------------------*\
+  #HERO
+\*-----------------------------------*/
+
+.medidas-hero {
+  background-color: var(--bg-deep-sea);
+  color: var(--bg-light-sand);
+  padding-block: 160px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.medidas-hero::after {
+  content: "cm";
+  font-family: var(--fontFamily-clashDisplay);
+  font-size: 26rem;
+  color: hsla(190, 20%, 70%, 0.07);
+  position: absolute;
+  right: -1rem;
+  bottom: -3rem;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.medidas-hero-label {
+  font-size: var(--fontSize-11);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--bg-accent-gold);
+  margin-block-end: 12px;
+}
+
+.medidas-hero-title {
+  font-size: var(--fontSize-2);
+  line-height: 1;
+  color: var(--bg-light-sand);
+  margin-block-end: 20px;
+}
+
+.medidas-hero-text {
+  font-size: var(--fontSize-8);
+  line-height: 1.9;
+  color: var(--bg-stone-gray);
+}
+
+@media (min-width: 768px) {
+  .medidas-hero-title {
+    font-size: 9rem;
+  }
+}
+
+
+/*-----------------------------------*\
+  #CÓMO MEDIRSE
+\*-----------------------------------*/
+
+.medidas-how-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr;
+  margin-block-end: 40px;
+}
+
+@media (min-width: 575px) {
+  .medidas-how-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .medidas-how-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.medidas-how-card {
+  background-color: var(--bg-white);
+  border: 2px solid var(--border-dark-stone);
+  box-shadow: var(--shadow-2);
+  border-radius: var(--radius-block);
+  padding: 28px 24px;
+  transition: box-shadow var(--transition-1), transform var(--transition-1);
+}
+
+.medidas-how-card:is(:hover, :focus-within) {
+  box-shadow: none;
+  transform: translate(2px, 2px);
+}
+
+.medidas-how-icon {
+  font-size: 3.2rem;
+  color: var(--bg-sky-blue);
+  margin-block-end: 16px;
+  line-height: 1;
+}
+
+.medidas-how-title {
+  font-size: var(--fontSize-8);
+  margin-block-end: 10px;
+  color: var(--text-dark-stone);
+}
+
+.medidas-how-card p {
+  font-size: var(--fontSize-9);
+  line-height: 1.8;
+  opacity: 0.75;
+}
+
+.medidas-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background-color: hsla(190, 20%, 55%, 0.1);
+  border: 1.5px solid var(--bg-sky-blue);
+  border-radius: var(--radius-block);
+  padding: 18px 22px;
+  font-size: var(--fontSize-9);
+  line-height: 1.7;
+  color: var(--text-deep-sea);
+}
+
+.medidas-tip ion-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  color: var(--bg-sky-blue);
+  margin-block-start: 2px;
+}
+
+
+/*-----------------------------------*\
+  #TABLAS DE MEDIDAS
+\*-----------------------------------*/
+
+.medidas-table-subtitle {
+  font-size: var(--fontSize-8);
+  opacity: 0.6;
+  margin-block-start: -30px;
+  margin-block-end: 35px;
+}
+
+.medidas-table-alt {
+  background-color: var(--bg-white);
+  border-block: 2px solid hsla(210, 11%, 15%, 0.08);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 2px solid var(--border-dark-stone);
+  box-shadow: var(--shadow-2);
+  border-radius: var(--radius-block);
+}
+
+.medidas-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fontSize-9);
+  min-width: 480px;
+}
+
+.medidas-table thead {
+  background-color: var(--bg-deep-sea);
+  color: var(--bg-light-sand);
+}
+
+.medidas-table th {
+  padding: 16px 20px;
+  text-align: left;
+  font-family: var(--fontFamily-clashDisplay);
+  font-weight: var(--weight-semiBold);
+  font-size: var(--fontSize-11);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.medidas-table td {
+  padding: 14px 20px;
+  border-block-end: 1.5px solid hsla(210, 11%, 15%, 0.08);
+  color: var(--text-dark-stone);
+  white-space: nowrap;
+}
+
+.medidas-table tbody tr:last-child td {
+  border-block-end: none;
+}
+
+.medidas-table tbody tr {
+  background-color: var(--bg-white);
+  transition: background-color var(--transition-1);
+}
+
+.medidas-table tbody tr:is(:hover, :focus-within) {
+  background-color: hsla(38, 40%, 95%, 0.7);
+}
+
+.row-highlight {
+  background-color: hsla(190, 20%, 55%, 0.06) !important;
+}
+
+/* Badge de talla */
+.talla-cell {
+  width: 72px;
+}
+
+.talla-badge {
+  display: inline-block;
+  font-family: var(--fontFamily-clashDisplay);
+  font-weight: var(--weight-semiBold);
+  font-size: var(--fontSize-11);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background-color: var(--bg-stone-gray);
+  color: var(--text-dark-stone);
+  padding: 4px 10px;
+  border-radius: 4px;
+  border: 1.5px solid hsla(210, 11%, 15%, 0.15);
+}
+
+.talla-badge-featured {
+  background-color: var(--bg-deep-sea);
+  color: var(--bg-light-sand);
+  border-color: var(--bg-deep-sea);
+}
+
+
+/*-----------------------------------*\
+  #CTA FINAL
+\*-----------------------------------*/
+
+.medidas-cta-section {
+  padding-block: 80px;
+  background-color: var(--bg-light-sand);
+}
+
+.medidas-cta-card {
+  background-color: var(--bg-deep-sea);
+  color: var(--bg-light-sand);
+  border: 2px solid var(--border-dark-stone);
+  box-shadow: var(--shadow-2);
+  border-radius: var(--radius-block);
+  padding: 50px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.medidas-cta-text .h2 {
+  color: var(--bg-light-sand);
+  margin-block-end: 12px;
+}
+
+.medidas-cta-text p {
+  font-size: var(--fontSize-8);
+  line-height: 1.8;
+  opacity: 0.75;
+  max-width: 55ch;
+}
+
+@media (min-width: 768px) {
+  .medidas-cta-card {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

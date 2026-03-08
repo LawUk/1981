@@ -9,7 +9,7 @@
 ---
 
 [![Estado](https://img.shields.io/badge/estado-en%20desarrollo-blue)](#)
-[![Páginas](https://img.shields.io/badge/páginas-3-green)](#estructura-del-proyecto)
+[![Páginas](https://img.shields.io/badge/páginas-4-green)](#estructura-del-proyecto)
 [![Licencia](https://img.shields.io/badge/licencia-personal-lightgrey)](#)
 
 </div>
@@ -18,7 +18,7 @@
 
 ## ¿Qué es esto?
 
-Sitio web oficial de **1981.**, una marca de ropa creada por hobbie que mezcla estética Y2K, diseño underground y principios ecológicos. El sitio está construido con HTML, CSS y JavaScript vanilla — sin frameworks, sin dependencias pesadas.
+Sitio web oficial de **1981.**, una marca de ropa creada por hobbie que mezcla estética Y2K, diseño underground y principios ecológicos. Construido con HTML, CSS y JavaScript vanilla — sin frameworks, sin dependencias pesadas.
 
 ---
 
@@ -28,39 +28,42 @@ Sitio web oficial de **1981.**, una marca de ropa creada por hobbie que mezcla e
 1981-main/
 │
 ├── index.html              # Página principal (home)
-├── lookbook.html           # Galería del lookbook (carga imágenes desde JSON)
-├── blog.html               # Blog de la marca
-├── imagenes.json           # Lista de imágenes del lookbook (se carga dinámicamente)
-├── favicon.svg             # Ícono del sitio
+├── lookbook.html           # Galería masonry + sección del blog
+├── blog.html               # Blog de la marca (carga desde blog.json)
+├── medidas.html            # Guía de tallas y medidas
+│
+├── imagenes.json           # Lista de fotos del lookbook (se carga dinámicamente)
+├── blog.json               # Contenido de todas las entradas del blog
+│
+├── favicon.svg
 │
 ├── assets/
 │   ├── css/
-│   │   ├── style.css       # Estilos globales, variables, componentes reutilizables
-│   │   └── blog.css        # Estilos específicos para la página del blog
+│   │   ├── style.css       # Estilos globales, variables, componentes base
+│   │   ├── blog.css        # Estilos del blog (blog.html + sección en lookbook)
+│   │   ├── lookbook.css    # Estilos específicos de lookbook.html
+│   │   └── medidas.css     # Estilos de la guía de medidas
 │   │
 │   ├── js/
-│   │   └── script.js       # Navbar toggle, scroll header, lookbook dinámico
+│   │   └── script.js       # Navbar toggle, scroll header, lookbook y blog dinámicos
 │   │
 │   ├── fonts/
 │   │   ├── font.css        # Declaraciones @font-face
-│   │   ├── ClashDisplay-Semibold.woff2   # Fuente para títulos
-│   │   └── lookbook.ttf    # Fuente decorativa para el título del lookbook
+│   │   ├── ClashDisplay-Semibold.woff2   # Fuente de títulos
+│   │   └── lookbook.ttf    # Fuente decorativa del lookbook
 │   │
 │   └── images/
 │       ├── logo.svg
 │       ├── hero-banner.png
-│       ├── hero-shape-1.png
-│       ├── hero-shape-2.png
+│       ├── hero-shape-1.png / hero-shape-2.png
 │       ├── offer-bg.png
-│       ├── footer-shape-1.png
-│       ├── footer-shape-2.png
-│       ├── footer-shape-3.png
-│       ├── product-1.png … product-9.png   # Imágenes de productos
+│       ├── footer-shape-1.png / footer-shape-2.png / footer-shape-3.png
+│       ├── product-1.png … product-9.png
 │       │
 │       └── lookbook/
 │           ├── foto3.png
 │           ├── foto4.png
-│           └── foto5.png   # Las fotos del lookbook van aquí
+│           └── foto5.png
 │
 └── README.md
 ```
@@ -69,48 +72,64 @@ Sitio web oficial de **1981.**, una marca de ropa creada por hobbie que mezcla e
 
 ## Páginas
 
-| Archivo | Descripción |
-|---|---|
-| `index.html` | Home: hero, productos top, sección "New", oferta del 13% |
-| `lookbook.html` | Galería masonry cargada dinámicamente desde `imagenes.json` |
-| `blog.html` | Entradas del blog: cultura, moda, ecología |
+| Archivo | Descripción | Link activo en navbar |
+|---|---|---|
+| `index.html` | Home: hero, productos top, sección "New", oferta 13% | — |
+| `lookbook.html` | Galería masonry + 3 entradas del blog al final | **Lookbook** (dorado) |
+| `blog.html` | Grid de entradas cargado dinámicamente desde `blog.json` | **Blog** (dorado) |
+| `medidas.html` | Guía de cómo medirse + tablas de tallas (superiores e inferiores) | — |
 
 ---
 
-## Cómo agregar fotos al Lookbook
+## Archivos de datos
 
-El lookbook carga sus imágenes de forma dinámica — no hay que tocar el HTML.
-
-1. Copia la imagen a `assets/images/lookbook/`
-2. Abre `imagenes.json` y agrega el nombre del archivo:
+### `imagenes.json`
+Controla qué fotos aparecen en el lookbook. El JS las carga, inserta las tarjetas en el DOM y actualiza el contador de fotos. Si una imagen no existe, se oculta automáticamente sin romper la página.
 
 ```json
 [
   "foto3.png",
   "foto4.png",
-  "foto5.png",
-  "tu-nueva-foto.png"
+  "foto5.png"
 ]
 ```
 
-3. Listo. La foto aparece automáticamente en el lookbook con el botón de guardar.
+Para agregar fotos: copia el archivo a `assets/images/lookbook/` y agrega su nombre al JSON.
 
-> **Nota:** Las imágenes deben estar en formato `.png`, `.jpg` o `.webp`. Si una imagen no existe, el script la oculta automáticamente sin romper la página.
+### `blog.json`
+Fuente de verdad de todas las entradas del blog. Tanto `blog.html` como el lookbook leen de aquí.
+
+```json
+[
+  {
+    "id": "slug-de-la-entrada",
+    "tag": "Moda",
+    "fecha": "Mar 2026",
+    "minutos": 4,
+    "titulo": "Título de la entrada",
+    "resumen": "Texto corto que aparece en las tarjetas.",
+    "cuerpo": ["Párrafo 1.", "Párrafo 2."],
+    "link": null,
+    "link_texto": "Leer"
+  }
+]
+```
+
+Para agregar una entrada nueva: agrega un objeto al inicio del array. El blog y el lookbook se actualizan automáticamente.
 
 ---
 
 ## Cómo correr el proyecto localmente
 
-El sitio es HTML estático puro. La única consideración es que el lookbook usa `fetch()` para leer `imagenes.json`, por lo que necesita un servidor local (no funciona abriendo el archivo directamente en el navegador).
+El lookbook y el blog usan `fetch()` para leer los JSON, por lo que necesitan un servidor local.
 
-**Opción A — VS Code (recomendado):**
-Instala la extensión [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) y haz clic en "Go Live".
+**Opción A — VS Code:**
+Instala [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) → clic en "Go Live".
 
 **Opción B — Python:**
 ```bash
-# Desde la carpeta del proyecto:
 python -m http.server 3000
-# Luego abre http://localhost:3000
+# Abre http://localhost:3000
 ```
 
 **Opción C — Node.js:**
@@ -124,11 +143,11 @@ npx serve .
 
 | Variable | Color | Uso |
 |---|---|---|
-| `--bg-deep-sea` | `hsl(210, 25%, 35%)` | Hero, botones secundarios, header del blog |
-| `--bg-light-sand` | `hsl(38, 40%, 95%)` | Fondo principal del sitio |
-| `--bg-sky-blue` | `hsl(190, 20%, 55%)` | Botones primarios |
-| `--bg-accent-gold` | `hsl(35, 30%, 70%)` | Hover states, acentos |
-| `--bg-stone-gray` | `hsl(210, 5%, 80%)` | Placeholder de imágenes |
+| `--bg-deep-sea` | `hsl(210, 25%, 35%)` | Heroes, botones secundarios |
+| `--bg-light-sand` | `hsl(38, 40%, 95%)` | Fondo principal |
+| `--bg-sky-blue` | `hsl(190, 20%, 55%)` | Botones primarios, íconos |
+| `--bg-accent-gold` | `hsl(35, 30%, 70%)` | Hover, links activos del navbar |
+| `--bg-stone-gray` | `hsl(210, 5%, 80%)` | Placeholder de imágenes, skeletons |
 | `--text-dark-stone` | `hsl(210, 11%, 15%)` | Texto principal |
 | `--text-deep-sea` | `hsl(210, 30%, 20%)` | Precios, acentos de texto |
 
@@ -136,40 +155,30 @@ npx serve .
 
 ## Tipografías
 
-| Fuente | Uso | Archivo |
+| Fuente | Uso | Fuente |
 |---|---|---|
-| **ClashDisplay Semibold** | Títulos, botones, precios | `ClashDisplay-Semibold.woff2` |
-| **LookbookFont** | Título de la página Lookbook | `lookbook.ttf` |
-| **Inter** (Google Fonts) | Texto de cuerpo, navegación | CDN |
+| **ClashDisplay Semibold** | Títulos, botones, precios, labels | `ClashDisplay-Semibold.woff2` |
+| **LookbookFont** | Título del lookbook | `lookbook.ttf` |
+| **Inter** | Cuerpo de texto | Google Fonts CDN |
 
 ---
 
 ## Descuento ecológico
 
-La sección de oferta menciona un **13% de descuento** para personas que manden una foto reciclando o donando. Para activarlo, el usuario escribe a `1981@support.com` con su foto y se le envía el código manualmente.
-
----
-
-## Tecnologías
-
-- HTML5 semántico
-- CSS3 (custom properties, grid, flexbox, media queries)
-- JavaScript ES6+ vanilla
-- [Ionicons 5.5.2](https://ionic.io/ionicons) para íconos
-- [Google Fonts — Inter](https://fonts.google.com/specimen/Inter)
+**13% de descuento** para quienes manden una foto reciclando o donando a `1981@support.com`. Se responde manualmente con un código. Sin formularios complicados.
 
 ---
 
 ## Estado del proyecto
 
 - [x] Página principal (home)
-- [x] Lookbook dinámico con descarga
-- [x] Blog
+- [x] Lookbook dinámico con descarga y sección del blog
+- [x] Blog dinámico cargado desde `blog.json`
+- [x] Guía de medidas con tablas de tallas
 - [ ] Página de producto individual
 - [ ] Carrito de compras
 - [ ] Formulario de contacto funcional
 - [ ] Página "Nuestro equipo"
-- [ ] Página "Medidas"
 - [ ] Términos & Condiciones / Política de privacidad
 
 ---
