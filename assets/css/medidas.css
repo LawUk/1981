@@ -138,6 +138,17 @@
   #TABLAS DE MEDIDAS
 \*-----------------------------------*/
 
+/* Quita el padding inferior de la sección "cómo medirse"
+   para que no haya espacio hueco antes de "Prendas superiores" */
+.medidas-how-section {
+  padding-block-end: 0 !important;
+}
+
+/* Reduce también el padding superior de las secciones de tabla */
+.medidas-table-section {
+  padding-block-start: 50px;
+}
+
 .medidas-table-subtitle {
   font-size: var(--fontSize-8);
   opacity: 0.6;

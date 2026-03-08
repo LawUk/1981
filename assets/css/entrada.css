@@ -1,0 +1,214 @@
+/*-----------------------------------*\
+  #entrada.css
+  Estilos para la página de entrada individual del blog
+\*-----------------------------------*/
+
+
+/*-----------------------------------*\
+  #HERO DE ENTRADA
+\*-----------------------------------*/
+
+.entrada-hero {
+  background-color: var(--bg-deep-sea);
+  color: var(--bg-light-sand);
+  padding-block: 140px 70px;
+}
+
+.entrada-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--fontSize-11);
+  font-family: var(--fontFamily-clashDisplay);
+  font-weight: var(--weight-semiBold);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--bg-stone-gray);
+  margin-block-end: 32px;
+  transition: color var(--transition-1), gap var(--transition-1);
+}
+
+.entrada-back ion-icon {
+  font-size: 1.6rem;
+  transition: transform var(--transition-1);
+}
+
+.entrada-back:is(:hover, :focus-visible) {
+  color: var(--bg-accent-gold);
+  gap: 10px;
+}
+
+.entrada-back:is(:hover, :focus-visible) ion-icon {
+  transform: translateX(-3px);
+}
+
+.entrada-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-block-end: 24px;
+}
+
+.entrada-meta .blog-read-time {
+  color: var(--bg-stone-gray);
+  opacity: 0.8;
+}
+
+.entrada-titulo {
+  font-size: var(--fontSize-3);
+  line-height: 1.15;
+  color: var(--bg-light-sand);
+  margin-block-end: 24px;
+  max-width: 18ch;
+}
+
+@media (min-width: 768px) {
+  .entrada-titulo {
+    font-size: var(--fontSize-2);
+  }
+}
+
+.entrada-resumen {
+  font-size: var(--fontSize-8);
+  line-height: 1.9;
+  color: var(--bg-stone-gray);
+  max-width: 55ch;
+}
+
+
+/*-----------------------------------*\
+  #CUERPO DEL ARTÍCULO
+\*-----------------------------------*/
+
+.entrada-cuerpo-section {
+  padding-block-end: 40px;
+}
+
+.entrada-cuerpo {
+  max-width: 65ch;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.entrada-cuerpo p {
+  font-size: var(--fontSize-8);
+  line-height: 2;
+  color: var(--text-dark-stone);
+}
+
+.entrada-cuerpo em {
+  font-style: italic;
+  color: var(--text-deep-sea);
+}
+
+.entrada-cuerpo strong {
+  font-weight: var(--weight-semiBold);
+  color: var(--text-dark-stone);
+}
+
+.entrada-link-wrap {
+  margin-block-start: 48px;
+  padding-block-start: 40px;
+  border-block-start: 2px solid hsla(210, 11%, 15%, 0.1);
+}
+
+
+/*-----------------------------------*\
+  #SECCIÓN: MÁS ENTRADAS
+\*-----------------------------------*/
+
+.entrada-mas-section {
+  background-color: var(--bg-white);
+  border-block-start: 2px solid var(--border-dark-stone);
+}
+
+.entrada-mas-titulo {
+  margin-block-end: 50px;
+}
+
+/* Limita el grid a 3 columnas máximo */
+#entrada-mas-grid {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 575px) {
+  #entrada-mas-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  #entrada-mas-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+/*-----------------------------------*\
+  #SKELETONS DE CARGA
+\*-----------------------------------*/
+
+.entrada-loading {
+  padding-block: 140px 80px;
+}
+
+.entrada-skeleton-tag,
+.entrada-skeleton-title,
+.entrada-skeleton-meta,
+.entrada-skeleton-p {
+  background: linear-gradient(
+    90deg,
+    var(--bg-stone-gray) 25%,
+    hsla(210, 5%, 88%, 1) 50%,
+    var(--bg-stone-gray) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+  border-radius: 6px;
+  margin-block-end: 16px;
+}
+
+@keyframes skeleton-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.entrada-skeleton-tag   { width: 80px;  height: 24px; }
+.entrada-skeleton-title { width: 70%;   height: 52px; margin-block: 12px 8px; }
+.entrada-skeleton-title--short { width: 45%; }
+.entrada-skeleton-meta  { width: 200px; height: 18px; margin-block: 8px 32px; }
+.entrada-skeleton-p     { width: 100%;  height: 18px; }
+.entrada-skeleton-p--short { width: 60%; }
+
+
+/*-----------------------------------*\
+  #ERROR 404
+\*-----------------------------------*/
+
+.entrada-error {
+  padding-block: 160px 80px;
+  text-align: center;
+}
+
+.entrada-error-code {
+  font-size: 12rem;
+  line-height: 1;
+  opacity: 0.08;
+  margin-block-end: -20px;
+}
+
+.entrada-error h1 {
+  margin-block-end: 12px;
+}
+
+.entrada-error p {
+  font-size: var(--fontSize-8);
+  opacity: 0.6;
+  margin-block-end: 36px;
+}
+
+.entrada-error .btn {
+  margin-inline: auto;
+}

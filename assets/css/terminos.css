@@ -1,0 +1,254 @@
+/*-----------------------------------*\
+  #terminos.css
+\*-----------------------------------*/
+
+
+/*-----------------------------------*\
+  #HERO
+\*-----------------------------------*/
+
+.terminos-hero {
+  background-color: var(--bg-deep-sea);
+  color: var(--bg-light-sand);
+  padding-block: 160px 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.terminos-hero::after {
+  content: "📎";
+  font-size: 20rem;
+  position: absolute;
+  right: 3rem;
+  bottom: -2rem;
+  line-height: 1;
+  opacity: 0.08;
+  pointer-events: none;
+  user-select: none;
+}
+
+.terminos-hero-label {
+  font-size: var(--fontSize-11);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--bg-accent-gold);
+  margin-block-end: 12px;
+}
+
+.terminos-hero-title {
+  font-size: var(--fontSize-2);
+  line-height: 1;
+  color: var(--bg-light-sand);
+  margin-block-end: 20px;
+  font-family: var(--fontFamily-clashDisplay);
+}
+
+.terminos-hero-text {
+  font-size: var(--fontSize-8);
+  line-height: 1.9;
+  color: var(--bg-stone-gray);
+}
+
+@media (min-width: 768px) {
+  .terminos-hero-title { font-size: 9rem; }
+}
+
+
+/*-----------------------------------*\
+  #LAYOUT PRINCIPAL
+  Dos columnas en desktop: nav fija izquierda + contenido derecha
+\*-----------------------------------*/
+
+.terminos-section {
+  padding-block-start: 60px;
+}
+
+.terminos-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+}
+
+@media (min-width: 992px) {
+  .terminos-layout {
+    grid-template-columns: 220px 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+}
+
+
+/*-----------------------------------*\
+  #NAV LATERAL (desktop) / tabs (móvil)
+\*-----------------------------------*/
+
+.terminos-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* En móvil va horizontal */
+@media (max-width: 991px) {
+  .terminos-nav {
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-block-end: 2px solid hsla(210, 11%, 15%, 0.12);
+    padding-block-end: 24px;
+    margin-block-end: 8px;
+  }
+}
+
+.terminos-nav-link {
+  font-family: var(--fontFamily-clashDisplay);
+  font-weight: var(--weight-semiBold);
+  font-size: var(--fontSize-9);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 10px 14px;
+  border-radius: var(--radius-block);
+  color: var(--text-dark-stone);
+  opacity: 0.45;
+  transition: opacity var(--transition-1), background-color var(--transition-1), color var(--transition-1);
+  border: 2px solid transparent;
+}
+
+.terminos-nav-link:is(:hover, :focus-visible) {
+  opacity: 1;
+  background-color: var(--bg-white);
+  border-color: hsla(210, 11%, 15%, 0.12);
+}
+
+.terminos-nav-link.active-tab {
+  opacity: 1;
+  background-color: var(--bg-deep-sea);
+  color: var(--bg-light-sand);
+  border-color: var(--bg-deep-sea);
+}
+
+/* En desktop el nav se queda fijo al hacer scroll */
+@media (min-width: 992px) {
+  .terminos-nav {
+    position: sticky;
+    top: 100px;
+  }
+}
+
+
+/*-----------------------------------*\
+  #DOCUMENTO
+\*-----------------------------------*/
+
+.terminos-docs {
+  min-width: 0; /* evita overflow en grid */
+}
+
+.terminos-doc {
+  scroll-margin-top: 120px;
+}
+
+.terminos-doc + .terminos-doc {
+  margin-block-start: 80px;
+  padding-block-start: 80px;
+  border-block-start: 2px solid hsla(210, 11%, 15%, 0.1);
+}
+
+.terminos-doc-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-block-end: 44px;
+}
+
+.terminos-emoji {
+  font-size: 3.2rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.terminos-doc-header .h2 {
+  margin-block-end: 4px;
+  font-size: var(--fontSize-4);
+}
+
+.terminos-date {
+  font-size: var(--fontSize-11);
+  opacity: 0.45;
+  font-weight: 500;
+}
+
+.terminos-body {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.terminos-bloque {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.terminos-h3 {
+  font-size: var(--fontSize-9);
+  color: var(--text-deep-sea);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding-block-end: 8px;
+  border-block-end: 1.5px solid hsla(210, 11%, 15%, 0.08);
+}
+
+.terminos-bloque p {
+  font-size: var(--fontSize-9);
+  line-height: 1.9;
+  color: var(--text-dark-stone);
+}
+
+.terminos-lista {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-inline-start: 4px;
+}
+
+.terminos-lista li {
+  font-size: var(--fontSize-9);
+  line-height: 1.7;
+  padding-inline-start: 20px;
+  position: relative;
+  color: var(--text-dark-stone);
+}
+
+.terminos-lista li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--bg-sky-blue);
+  font-weight: 600;
+}
+
+.terminos-link {
+  color: var(--bg-sky-blue);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition-1);
+}
+
+.terminos-link:is(:hover, :focus-visible) {
+  color: var(--text-deep-sea);
+}
+
+/* Bloque destacado: resumen rápido de privacidad */
+.terminos-bloque-highlight {
+  background-color: var(--bg-white);
+  border: 2px solid var(--border-dark-stone);
+  box-shadow: var(--shadow-2);
+  border-radius: var(--radius-block);
+  padding: 22px 26px;
+}
+
+.terminos-bloque-highlight p {
+  font-size: var(--fontSize-8) !important;
+  line-height: 1.7 !important;
+}
