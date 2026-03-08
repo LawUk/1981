@@ -371,3 +371,50 @@ if (entradaContenido) {
       });
   }
 }
+
+
+/**
+ * Tabs de Términos & Privacidad
+ * Al hacer click en un tab: scroll suave a la sección + marca el tab activo
+ */
+const terminosNavLinks = document.querySelectorAll('.terminos-nav-link');
+
+if (terminosNavLinks.length > 0) {
+
+  terminosNavLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      // Marcar activo
+      terminosNavLinks.forEach(l => l.classList.remove('active-tab'));
+      this.classList.add('active-tab');
+
+      // Scroll suave a la sección
+      const targetId = this.getAttribute('href').replace('#', '');
+      const target   = document.getElementById(targetId);
+      if (target) {
+        const offset = 90; // altura del header fijo
+        const top    = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // Al hacer scroll, actualizar qué tab está activo
+  window.addEventListener('scroll', () => {
+    const sections = ['terminos', 'privacidad'].map(id => document.getElementById(id)).filter(Boolean);
+    let current = sections[0];
+
+    sections.forEach(section => {
+      if (window.scrollY >= section.offsetTop - 120) {
+        current = section;
+      }
+    });
+
+    if (current) {
+      terminosNavLinks.forEach(link => {
+        link.classList.toggle('active-tab', link.getAttribute('href') === '#' + current.id);
+      });
+    }
+  }, { passive: true });
+}
