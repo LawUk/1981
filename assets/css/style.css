@@ -1066,3 +1066,18 @@ address.footer-text {
     padding-block-start: 150px;
   }
 }
+
+/* Link wrapper sobre imagen de producto */
+.product-card-img-link {
+  display: block;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.product-card .card-banner {
+  position: relative;
+}
+.product-card .product-btn {
+  position: relative;
+  z-index: 2;
+}

@@ -11,6 +11,94 @@ function basePath(file) {
 }
 
 /**
+ * Productos Home
+ * Carga productos.json y llena #product-list-top (3 primeros)
+ * y #product-list-feature (los 6 siguientes)
+ */
+const productListTop     = document.getElementById('product-list-top');
+const productListFeature = document.getElementById('product-list-feature');
+
+if (productListTop || productListFeature) {
+  fetch(basePath('productos.json'))
+    .then(r => { if (!r.ok) throw new Error('No se pudo cargar productos.json'); return r.json(); })
+    .then(productos => {
+
+      function crearCardProducto(p, esScrollbar) {
+        const li  = document.createElement('li');
+        if (esScrollbar) li.className = 'scrollbar-item';
+
+        const productoUrl = basePath('producto.html') + '?id=' + p.id;
+        const imgSrc      = basePath('assets/images/' + p.imagen_home);
+
+        li.innerHTML = `
+          <div class="product-card text-center">
+            <div class="card-banner">
+              <a href="${productoUrl}" class="product-card-img-link" tabindex="-1" aria-hidden="true">
+                <figure class="product-banner img-holder" style="--width: 448; --height: 470;">
+                  <img src="${imgSrc}" width="448" height="470" loading="lazy"
+                    alt="${p.nombre}" class="img-cover">
+                </figure>
+              </a>
+              <button class="btn product-btn" data-id="${p.id}">
+                <ion-icon name="bag" aria-hidden="true"></ion-icon>
+                <span class="span">Agregar al carrito</span>
+              </button>
+            </div>
+            <div class="card-content">
+              <h3 class="h4 title">
+                <a href="${productoUrl}" class="card-title">${p.nombre}</a>
+              </h3>
+              <span class="price">${p.precio}</span>
+            </div>
+          </div>
+        `;
+
+        // Botón carrito
+        const btn = li.querySelector('.product-btn');
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          const tallas      = p.tallas || [];
+          const disponibles = tallas.filter(t => t.stock);
+
+          if (disponibles.length === 1) {
+            carritoAgregar({
+              id:     p.id,
+              nombre: p.nombre,
+              precio: p.precio_num,
+              imagen: p.imagen_home,
+              talla:  disponibles[0].nombre
+            });
+            btn.innerHTML = '<ion-icon name="checkmark-outline"></ion-icon><span class="span">¡Listo!</span>';
+            setTimeout(() => {
+              btn.innerHTML = '<ion-icon name="bag"></ion-icon><span class="span">Agregar al carrito</span>';
+            }, 1800);
+          } else {
+            window.location.href = productoUrl;
+          }
+        });
+
+        return li;
+      }
+
+      // Primeros 3 → sección top (scrollbar)
+      productos.slice(0, 3).forEach(p => {
+        if (productListTop) productListTop.appendChild(crearCardProducto(p, true));
+      });
+
+      // Siguientes 6 → sección feature
+      productos.slice(3).forEach(p => {
+        if (productListFeature) productListFeature.appendChild(crearCardProducto(p, false));
+      });
+
+    })
+    .catch(err => {
+      console.error('Error al cargar productos:', err);
+    });
+}
+
+
+/**
  * Mobile Navbar Toggle
  */
 const navbar = document.querySelector("[data-navbar]");
