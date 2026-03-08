@@ -67,6 +67,10 @@ if (lookbookGrid) {
         img.src = imagePath;
         img.alt = "Imagen del Lookbook";
         img.loading = "lazy";
+        img.onerror = function() {
+          // Si la imagen no existe, oculta el elemento
+          li.style.display = 'none';
+        };
         
         // 3. Configura el contenedor (el que faltaba)
         container.className = 'lookbook-item-container';
